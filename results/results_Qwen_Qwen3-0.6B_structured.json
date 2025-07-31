@@ -1,0 +1,704 @@
+{
+  "evalId": "eval-Nxh-2025-07-31T23:03:39",
+  "results": {
+    "version": 3,
+    "timestamp": "2025-07-31T23:03:39.573Z",
+    "prompts": [
+      {
+        "raw": "Your primary goal is to be structured and efficient. Provide a response that follows a clear, numbered format.\n\n1.  **Acknowledge:** Briefly state the customer's problem.\n2.  **Action:** Describe the single most important next step you will take.\n3.  **Question:** If necessary, ask one clarifying question.\n\nCustomer Complaint: \"{{complaint}}\"",
+        "label": "prompts\\structured_prompt.txt: Your primary goal is to be structured and efficient. Provide a response that follows a clear, numbered format.\n\n1.  **Acknowledge:** Briefly state the customer's problem.\n2.  **Action:** Describe the single most important next step you will take.\n3.  **Question:** If necessary, ask one clarifying question.\n\nCustomer Complaint: \"{{complaint}}\"",
+        "id": "a7c759ca2e1bed818c59f60e1306c63bffa6f9c0a5bdb57e7c197b4947807451",
+        "provider": "python:prompts/promptfoo_provider.py:call_agent",
+        "metrics": {
+          "score": 5,
+          "testPassCount": 5,
+          "testFailCount": 0,
+          "testErrorCount": 0,
+          "assertPassCount": 10,
+          "assertFailCount": 0,
+          "totalLatencyMs": 72310,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "total": 0,
+            "numRequests": 5,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 3488,
+              "prompt": 2868,
+              "completion": 620,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 728,
+            "prompt": 594,
+            "completion": 134,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Does the response provide a clear, numbered list of actions or points?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is clearly organized with a numbered list (1-3) and each point is marked with bold headers (Acknowledge, Action, Question)",
+              "tokensUsed": {
+                "total": 346,
+                "prompt": 296,
+                "completion": 50,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            },
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Is the response useful and does it provide a clear next step for the customer?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is useful as it 1) acknowledges the customer's frustration, 2) clearly states what action will be taken, and 3) provides a specific next step by requesting necessary information (IP address or service provider) to proceed with troubleshooting",
+              "tokensUsed": {
+                "total": 382,
+                "prompt": 298,
+                "completion": 84,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "f7728070-32d9-426e-beda-e226e85a2281",
+        "latencyMs": 15071,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Your primary goal is to be structured and efficient. Provide a response that follows a clear, numbered format.\n\n1.  **Acknowledge:** Briefly state the customer's problem.\n2.  **Action:** Describe the single most important next step you will take.\n3.  **Question:** If necessary, ask one clarifying question.\n\nCustomer Complaint: \"My internet has been down since yesterday. I work from home and this is very frustrating!\"",
+          "label": "prompts\\structured_prompt.txt: Your primary goal is to be structured and efficient. Provide a response that follows a clear, numbered format.\n\n1.  **Acknowledge:** Briefly state the customer's problem.\n2.  **Action:** Describe the single most important next step you will take.\n3.  **Question:** If necessary, ask one clarifying question.\n\nCustomer Complaint: \"{{complaint}}\""
+        },
+        "promptId": "a7c759ca2e1bed818c59f60e1306c63bffa6f9c0a5bdb57e7c197b4947807451",
+        "promptIdx": 0,
+        "provider": {
+          "id": "python:prompts/promptfoo_provider.py:call_agent",
+          "label": ""
+        },
+        "response": {
+          "output": "1. **Acknowledge:** My internet service has been unavailable since yesterday, which is causing frustration for me as I work from home.  \n2. **Action:** I will check your account details to confirm if there is any issue with your internet connection.  \n3. **Question:** Could you please provide the IP address or the service provider name so we can further investigate?",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "complaint": "My internet has been down since yesterday. I work from home and this is very frustrating!"
+          },
+          "description": "Row #1",
+          "assert": [
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Does the response provide a clear, numbered list of actions or points?"
+            },
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Is the response useful and does it provide a clear next step for the customer?"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "complaint": "My internet has been down since yesterday. I work from home and this is very frustrating!"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 705,
+            "prompt": 568,
+            "completion": 137,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Does the response provide a clear, numbered list of actions or points?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is clearly organized with a numbered list of 3 points, each marked with a number and bold header (Acknowledge, Action, Question)",
+              "tokensUsed": {
+                "total": 334,
+                "prompt": 283,
+                "completion": 51,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            },
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Is the response useful and does it provide a clear next step for the customer?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is useful and provides clear next steps by: 1) acknowledging the billing issue, 2) asking the customer to verify current bill details, and 3) requesting specific information (date and amount) if the problem continues. This gives the customer concrete actions to take.",
+              "tokensUsed": {
+                "total": 371,
+                "prompt": 285,
+                "completion": 86,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "5e40fb73-3991-47e4-8e84-b6c6b65d4492",
+        "latencyMs": 14455,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Your primary goal is to be structured and efficient. Provide a response that follows a clear, numbered format.\n\n1.  **Acknowledge:** Briefly state the customer's problem.\n2.  **Action:** Describe the single most important next step you will take.\n3.  **Question:** If necessary, ask one clarifying question.\n\nCustomer Complaint: \"I was overcharged on my last bill. Can you help?\"",
+          "label": "prompts\\structured_prompt.txt: Your primary goal is to be structured and efficient. Provide a response that follows a clear, numbered format.\n\n1.  **Acknowledge:** Briefly state the customer's problem.\n2.  **Action:** Describe the single most important next step you will take.\n3.  **Question:** If necessary, ask one clarifying question.\n\nCustomer Complaint: \"{{complaint}}\""
+        },
+        "promptId": "a7c759ca2e1bed818c59f60e1306c63bffa6f9c0a5bdb57e7c197b4947807451",
+        "promptIdx": 0,
+        "provider": {
+          "id": "python:prompts/promptfoo_provider.py:call_agent",
+          "label": ""
+        },
+        "response": {
+          "output": "1. **Acknowledge:** I understand that you were overcharged on your last bill.  \n2. **Action:** Please check the details of your current bill and verify the total amount.  \n3. **Question:** If the issue persists, please provide the date of the overcharge and the specific amount.",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "complaint": "I was overcharged on my last bill. Can you help?"
+          },
+          "description": "Row #2",
+          "assert": [
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Does the response provide a clear, numbered list of actions or points?"
+            },
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Is the response useful and does it provide a clear next step for the customer?"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "complaint": "I was overcharged on my last bill. Can you help?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 673,
+            "prompt": 550,
+            "completion": 123,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Does the response provide a clear, numbered list of actions or points?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is clearly organized with numbered points (1, 2, 3) and each point is marked with a clear header (Acknowledge, Action, Question)",
+              "tokensUsed": {
+                "total": 328,
+                "prompt": 274,
+                "completion": 54,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            },
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Is the response useful and does it provide a clear next step for the customer?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response acknowledges the issue, provides a clear action step (checking for network outages), and asks a follow-up question to gather more information. This gives the customer both immediate direction and opens the door for further troubleshooting.",
+              "tokensUsed": {
+                "total": 345,
+                "prompt": 276,
+                "completion": 69,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "8d9074ac-c9f7-4148-9073-d7fb6b0a5b0c",
+        "latencyMs": 14159,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Your primary goal is to be structured and efficient. Provide a response that follows a clear, numbered format.\n\n1.  **Acknowledge:** Briefly state the customer's problem.\n2.  **Action:** Describe the single most important next step you will take.\n3.  **Question:** If necessary, ask one clarifying question.\n\nCustomer Complaint: \"The internet speed is very slow during peak hours\"",
+          "label": "prompts\\structured_prompt.txt: Your primary goal is to be structured and efficient. Provide a response that follows a clear, numbered format.\n\n1.  **Acknowledge:** Briefly state the customer's problem.\n2.  **Action:** Describe the single most important next step you will take.\n3.  **Question:** If necessary, ask one clarifying question.\n\nCustomer Complaint: \"{{complaint}}\""
+        },
+        "promptId": "a7c759ca2e1bed818c59f60e1306c63bffa6f9c0a5bdb57e7c197b4947807451",
+        "promptIdx": 0,
+        "provider": {
+          "id": "python:prompts/promptfoo_provider.py:call_agent",
+          "label": ""
+        },
+        "response": {
+          "output": "1. **Acknowledge:** The internet speed is very slow during peak hours.  \n2. **Action:** Check for any recent network outages or interference during peak hours.  \n3. **Question:** Are there any other issues with the network or service during this time?",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "complaint": "The internet speed is very slow during peak hours"
+          },
+          "description": "Row #3",
+          "assert": [
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Does the response provide a clear, numbered list of actions or points?"
+            },
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Is the response useful and does it provide a clear next step for the customer?"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "vars": {
+          "complaint": "The internet speed is very slow during peak hours"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 677,
+            "prompt": 574,
+            "completion": 103,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Does the response provide a clear, numbered list of actions or points?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is clearly organized with numbered points (1-3), each marked with bold headers and specific content",
+              "tokensUsed": {
+                "total": 328,
+                "prompt": 286,
+                "completion": 42,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            },
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Is the response useful and does it provide a clear next step for the customer?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response provides clear next steps (checking email settings, logging in again) and asks for specific details if the issue continues. It follows a structured format of acknowledging the issue and offering actionable solutions.",
+              "tokensUsed": {
+                "total": 349,
+                "prompt": 288,
+                "completion": 61,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "e1a79d3e-5964-41a7-b4cb-9d2350f8d089",
+        "latencyMs": 14143,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Your primary goal is to be structured and efficient. Provide a response that follows a clear, numbered format.\n\n1.  **Acknowledge:** Briefly state the customer's problem.\n2.  **Action:** Describe the single most important next step you will take.\n3.  **Question:** If necessary, ask one clarifying question.\n\nCustomer Complaint: \"I can't access my email through your service\"",
+          "label": "prompts\\structured_prompt.txt: Your primary goal is to be structured and efficient. Provide a response that follows a clear, numbered format.\n\n1.  **Acknowledge:** Briefly state the customer's problem.\n2.  **Action:** Describe the single most important next step you will take.\n3.  **Question:** If necessary, ask one clarifying question.\n\nCustomer Complaint: \"{{complaint}}\""
+        },
+        "promptId": "a7c759ca2e1bed818c59f60e1306c63bffa6f9c0a5bdb57e7c197b4947807451",
+        "promptIdx": 0,
+        "provider": {
+          "id": "python:prompts/promptfoo_provider.py:call_agent",
+          "label": ""
+        },
+        "response": {
+          "output": "1. **Acknowledge:** I understand you're having trouble accessing your email through our service.  \n2. **Action:** Please check your email account settings or try logging in again.  \n3. **Question:** If the issue persists, please provide more details about the error message or the time you experienced it to help further.",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "complaint": "I can't access my email through your service"
+          },
+          "description": "Row #4",
+          "assert": [
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Does the response provide a clear, numbered list of actions or points?"
+            },
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Is the response useful and does it provide a clear next step for the customer?"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 3,
+        "vars": {
+          "complaint": "I can't access my email through your service"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 705,
+            "prompt": 582,
+            "completion": 123,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Does the response provide a clear, numbered list of actions or points?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is clearly organized with a numbered list (1-3) and each point is marked with bold headers (Acknowledge, Action, Question) making it very structured and easy to follow",
+              "tokensUsed": {
+                "total": 349,
+                "prompt": 290,
+                "completion": 59,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            },
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Is the response useful and does it provide a clear next step for the customer?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is useful as it 1) acknowledges the issue, 2) provides two clear next steps (check service status or contact support), and 3) asks for additional information to help resolve the situation",
+              "tokensUsed": {
+                "total": 356,
+                "prompt": 292,
+                "completion": 64,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "3ebb0c9b-a74b-40a7-9cbe-549dce1786b7",
+        "latencyMs": 14482,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Your primary goal is to be structured and efficient. Provide a response that follows a clear, numbered format.\n\n1.  **Acknowledge:** Briefly state the customer's problem.\n2.  **Action:** Describe the single most important next step you will take.\n3.  **Question:** If necessary, ask one clarifying question.\n\nCustomer Complaint: \"My service was supposed to be installed today but nobody showed up\"",
+          "label": "prompts\\structured_prompt.txt: Your primary goal is to be structured and efficient. Provide a response that follows a clear, numbered format.\n\n1.  **Acknowledge:** Briefly state the customer's problem.\n2.  **Action:** Describe the single most important next step you will take.\n3.  **Question:** If necessary, ask one clarifying question.\n\nCustomer Complaint: \"{{complaint}}\""
+        },
+        "promptId": "a7c759ca2e1bed818c59f60e1306c63bffa6f9c0a5bdb57e7c197b4947807451",
+        "promptIdx": 0,
+        "provider": {
+          "id": "python:prompts/promptfoo_provider.py:call_agent",
+          "label": ""
+        },
+        "response": {
+          "output": "1. **Acknowledge:** My apologies for the inconvenience, but the service installation has not been completed as scheduled.  \n2. **Action:** Please check the service status or contact our customer support team directly for further assistance.  \n3. **Question:** Could you please confirm the status of the installation and provide any additional details if needed?",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "complaint": "My service was supposed to be installed today but nobody showed up"
+          },
+          "description": "Row #5",
+          "assert": [
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Does the response provide a clear, numbered list of actions or points?"
+            },
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Is the response useful and does it provide a clear next step for the customer?"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 4,
+        "vars": {
+          "complaint": "My service was supposed to be installed today but nobody showed up"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      }
+    ],
+    "stats": {
+      "successes": 5,
+      "failures": 0,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 0,
+        "completion": 0,
+        "cached": 0,
+        "total": 0,
+        "numRequests": 5,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0
+        },
+        "assertions": {
+          "total": 3488,
+          "prompt": 2868,
+          "completion": 620,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0
+          }
+        }
+      }
+    }
+  },
+  "config": {
+    "tags": {},
+    "prompts": [
+      "prompts/structured_prompt.txt"
+    ],
+    "providers": [
+      {
+        "config": {
+          "model": "Qwen/Qwen3-0.6B"
+        },
+        "id": "python:prompts/promptfoo_provider.py:call_agent"
+      }
+    ],
+    "tests": [
+      {
+        "vars": {
+          "complaint": "My internet has been down since yesterday. I work from home and this is very frustrating!"
+        },
+        "description": "Row #1"
+      },
+      {
+        "vars": {
+          "complaint": "I was overcharged on my last bill. Can you help?"
+        },
+        "description": "Row #2"
+      },
+      {
+        "vars": {
+          "complaint": "The internet speed is very slow during peak hours"
+        },
+        "description": "Row #3"
+      },
+      {
+        "vars": {
+          "complaint": "I can't access my email through your service"
+        },
+        "description": "Row #4"
+      },
+      {
+        "vars": {
+          "complaint": "My service was supposed to be installed today but nobody showed up"
+        },
+        "description": "Row #5"
+      }
+    ],
+    "scenarios": [],
+    "env": {},
+    "sharing": true,
+    "defaultTest": {
+      "assert": [
+        {
+          "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+          "type": "llm-rubric",
+          "value": "Does the response provide a clear, numbered list of actions or points?"
+        },
+        {
+          "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+          "type": "llm-rubric",
+          "value": "Is the response useful and does it provide a clear next step for the customer?"
+        }
+      ],
+      "vars": {},
+      "options": {},
+      "metadata": {}
+    },
+    "outputPath": [
+      "results\\results_Qwen_Qwen3-0.6B_structured.json"
+    ],
+    "extensions": [],
+    "metadata": {}
+  },
+  "shareableUrl": null
+}

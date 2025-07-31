@@ -1,0 +1,27 @@
+[
+    {
+        "vars": {
+            "complaint": "My internet has been down since yesterday. I work from home and this is very frustrating!"
+        }
+    },
+    {
+        "vars": {
+            "complaint": "I was overcharged on my last bill. Can you help?"
+        }
+    },
+    {
+        "vars": {
+            "complaint": "The internet speed is very slow during peak hours"
+        }
+    },
+    {
+        "vars": {
+            "complaint": "I can't access my email through your service"
+        }
+    },
+    {
+        "vars": {
+            "complaint": "My service was supposed to be installed today but nobody showed up"
+        }
+    }
+]
