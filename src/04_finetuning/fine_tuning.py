@@ -18,7 +18,7 @@ def fine_tune_model(
     per_device_train_batch_size=1,
     gradient_accumulation_steps=2,
     use_4bit=True,
-    ):
+):
     """
     Fine-tunes the Qwen3 model using the modern SFTTrainer API.
     """
