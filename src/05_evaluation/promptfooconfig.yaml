@@ -1,37 +1,18 @@
-
-# -----------------------------------------------------------------------------
-# Promptfoo Configuration for Comprehensive System Evaluation
-# -----------------------------------------------------------------------------
-# This file defines the evaluation suite for comparing four different versions
-# of our customer support agent. It uses a combination of standard NLP metrics
-# and custom LLM-based feedback to provide a holistic view of performance.
-# -----------------------------------------------------------------------------
-
-# --- Test Cases ---
-# Use our dataset which includes customer complaints as test cases
 tests: complaints_with_references.json
 
-# --- System Variants (Providers) ---
-# Each provider points to a Python script and the function to call within it.
 providers:
-  # 1. Base model with a simple prompt
   - id: "python:providers/provider_prompt_only.py:call_agent"
     label: "Prompt-Only"
 
-  # 2. Base model augmented with RAG
   - id: "python:providers/provider_rag_only.py:call_agent"
     label: "RAG-Only"
 
-  # 3. Our fine-tuned model without RAG (DISABLED - Fine-tuning not complete)
   # - id: "python:providers/provider_finetuned_only.py:call_agent"
   #   label: "Fine-Tuned Only"
 
-  # 4. The final agent with the fine-tuned model and RAG decision logic (DISABLED - Fine-tuning not complete)
   # - id: "python:providers/provider_full_agent.py:call_agent"
   #   label: "Full Agent"
 
-# --- Evaluation Metrics ---
-# Use default tests that apply to all test cases
 defaultTest:
   assert:
     - type: script
@@ -39,14 +20,10 @@ defaultTest:
       value: "cd src/05_evaluation; python llm_evaluator.py \"{{output}}\""
       threshold: 0.0
 
-# --- Command-Line and UI Settings ---
-# These settings improve the user experience when running the evaluation.
 commandLine:
-  # Show a summary table in the terminal after the evaluation is complete.
   showProgress: true
   showTotals: true
   
-# Configure the web UI viewer for better analysis
 # evaluateOptions:
 #   customMetrics:
 #     - id: helpfulness

@@ -23,13 +23,11 @@ def fine_tune_model(
     """
     Fine-tunes the Qwen3 model using the modern SFTTrainer API.
     """
-    # --- Load the dataset ---
     if dataset is None:
         if not os.path.exists(dataset_path):
             raise FileNotFoundError(f"Dataset not found at {dataset_path}. Please run the data_preparation.py script first.")
         dataset = load_from_disk(dataset_path)
 
-    # --- Load tokenizer and model ---
     tokenizer = AutoTokenizer.from_pretrained(base_model_id, use_fast=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
@@ -53,11 +51,9 @@ def fine_tune_model(
     model.config.use_cache = False
     model.config.pretraining_tp = 1
 
-    # --- Correctly prepare model for k-bit training ---
     if use_4bit:
         model = prepare_model_for_kbit_training(model)
 
-    # --- Configure LoRA ---
     peft_config = LoraConfig(
         r=lora_rank,
         lora_alpha=lora_alpha,
@@ -71,10 +67,8 @@ def fine_tune_model(
     )
     model = get_peft_model(model, peft_config)
 
-    # --- Data Collator ---
     data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
 
-    # --- Set up training arguments ---
     training_args = TrainingArguments(
         output_dir=output_dir,
         per_device_train_batch_size=per_device_train_batch_size,
@@ -89,7 +83,6 @@ def fine_tune_model(
         report_to="tensorboard",
     )
 
-    # --- Initialize Trainer ---
     trainer = SFTTrainer(
         model=model,
         args=training_args,
@@ -98,12 +91,10 @@ def fine_tune_model(
         data_collator=data_collator,
     )
 
-    # --- Start Training ---
     print("Starting fine-tuning...")
     trainer.train()
     print("Fine-tuning complete.")
 
-    # --- Save the final model ---
     final_model_path = os.path.join(output_dir, "final_model")
     trainer.save_model(final_model_path)
     print(f"Fine-tuned model adapter saved to {final_model_path}")

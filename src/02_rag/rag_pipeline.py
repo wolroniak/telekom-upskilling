@@ -10,7 +10,6 @@ class RAGPipeline:
         self.vector_store = self._build_vector_store()
 
     def _load_documents(self):
-        # Specify UTF-8 encoding to handle a wider range of characters
         loader_kwargs = {'encoding': 'utf-8'}
         loader = DirectoryLoader(
             self.knowledge_base_dir,
@@ -75,7 +74,7 @@ if __name__ == '__main__':
         print(f"Content: {doc.page_content[:100]}...")
         print("---")
 
-    # Example of a query that should have a high (bad) score
+    # Example of a high (bad) score
     irrelevant_query = "What is the capital of France?"
     irrelevant_docs, irrelevant_scores = pipeline.retrieve_with_scores(irrelevant_query)
     

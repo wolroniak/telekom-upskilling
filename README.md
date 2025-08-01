@@ -1,98 +1,99 @@
-# telekom-upskilling
+# Customer Support LLM Agent - Project
 
-Building and Evaluating a Helpful, Retrieval-Augmented Customer Support LLM Agent.
+---
 
-## Objective: 
-The goal of this project is to design, implement, and evaluate a lightweight, locally deployable customer support assistant that generates consistently helpful, accurate, and safe responses to user complaints. The assistant will integrate: 
-• Prompt engineering for controllable behaviour, 
-• Retrieval-Augmented Generation (RAG) for factual grounding, 
-• Agent-based decision logic to choose between internal or external knowledge, 
-• Fine-tuning using instruction-following and safety-aligned datasets. 
+## Project Overview
 
-A key focus is maximizing the usefulness, politeness, and trustworthiness of outputs, while minimizing the risk of unhelpful, rude, or factually incorrect responses. Evaluation will use automated metrics and LLM-based feedback to ensure improvements are measurable and aligned with end-user expectations. 
+This project implements a customer support AI assistant that intelligently processes customer complaints and provides contextually appropriate responses. The system decides whether to use retrieved knowledge from a knowledge base or rely on the model's internal understanding based on query relevance.
 
-### Base Model Selection 
-Throughout all stages, use the same compact base model to ensure fair and consistent 
-evaluation. Suggested options: 
-- Flan-T5-Small (~80M parameters)  
-- Phi-2 (~1.3B)  
-- Mistral 7B-Instruct 
+### Core Components
+- **Base LLM**: Qwen/Qwen3-0.6B with multiple other model support
+- **Knowledge Base**: Technical documentation covering billing, troubleshooting, and policies  
+- **Decision Agent**: Intelligent routing between RAG and direct LLM responses
+- **Fine-tuning**: LoRA-based adaptation for improved customer service tone
+- **Evaluation**: Multi-metric assessment framework
 
-## Project Steps 
-### 1. Prompt Engineering for Customer Support
-Dataset: 
-- Create a small synthetic dataset of 5 - 10 common customer complaints (e.g., internet outage, billing issue, slow speed). 
-Example complaints: 
-	- "My internet has been down since yesterday. I work from home and this is very frustrating!" 
-	- "I was overcharged on my last bill. Can you help?" 
-Task: 
-	- Design 3 prompt templates (empathetic, structured, friendly) for these complaints. 
-	- Use Promptfoo to evaluate prompts on your dataset for empathy, clarity, and usefulness. 
-	- Record and compare prompt effectiveness across templates and model variants. 
+---
 
-### 2. Retrieval-Augmented Generation (RAG)
-Dataset:
-- Create a small knowledge base using: 
-	- 2–3 curated Wikipedia articles (e.g., Troubleshooting Internet Connection, Customer Service Best Practices) 
-	- Company FAQ files (sample or synthetic) 
-Task: 
-- Build a minimal retrieval pipeline using sentence-transformers or similar. 
-- For each complaint, retrieve relevant context and combine it with the user query in the prompt to the LLM. 
-- Evaluate if the retrieved chunks are relevant and improve the answer quality over prompt-only responses. 
+## Quick Start Guide
 
-### 3. Agent Decision Logic
-Dataset: 
-- Use the same set of customer complaints and knowledge base as above.
-Task:   
-- Implement a simple decision function: 
-	- If the retrieval score is high, use RAG; otherwise, answer directly using the LLM’s internal knowledge. 
-- Log the agent’s decision and the final response for each query. 
+### Prerequisites
+```bash
+pip install -r requirements.txt
+```
 
-### 4. Fine-Tuning for Helpfulness and Safety - 
-Dataset: 
-- Use a subset (2,000–3,000 samples) of the Alpaca dataset for instruction following. 
-- Anthropic Helpful-Harmless (HH) dataset: 
-	- Focus on examples that contrast helpful vs. evasive, or harmless vs. harmful completions. 
-	- Optionally, rephrase examples to resemble customer service tone and contexts. 
-- Optional: Custom examples of good and bad responses (e.g., rude tone, hallucinations, polite apology).
-Task: 
-- Fine-tune a compact open-source LLM (e.g., Flan-T5-Small,  or Mistral 7B Instruct) using LoRA and Hugging Face PEFT. 
-- Compare model outputs before and after fine-tuning on your test set of customer complaints. 
-Subtask (Hyperparameter Selection): 
-- Explore and compare training configurations: 
-	- Learning rate (e.g., 1e-5, 5e-5, 1e-4) 
-	- Epochs, batch size, gradient accumulation 
-	- LoRA rank and dropout 
-- Track validation loss, fluency, and helpfulness scores to choose the best setup. 
+### Basic Usage Examples
 
-### 5. Evaluation 
-Datasets: 
-- Use your synthetic complaints dataset 
-- Optional: CNN/DailyMail for broader generalization checks 
-Metrics: 
-- BLEU-1/2/3 for n-gram overlap (if you have reference answers) 
-- BERTScore for semantic similarity  
-- Perplexity for model confidence 
-- LLM-based feedback: 
-	- Use GPT-4 or a small local reward model to evaluate responses based on: 
-		- Helpfulness 
-		- Clarity 
-		- Empathy 
-		- Safety 
-Task: 
-- Compare variants of the system: 
-	- Prompt-only 
-	- RAG-only 
-- Fine-tuned-only 
-- Agent + RAG + Fine-tuning 
+#### 1. Test the Base Agent
+```bash
+cd src/00_setup
+python run_agent.py
+```
+This demonstrates the core LLM agent with different models (Qwen, Gemma, T5).
 
+#### 2. Try Different Prompt Templates
+```bash
+cd src/01_prompt_engineering
+python run_prompts.py
+```
+This demonstrates how empathetic, structured, and friendly prompts perform on customer complaints.
 
-## Reporting - Important for getting the certification 
-Deliverables: 
-- Code/scripts for each component (prompt templates, retrieval, agent logic, fine tuning, evaluation) 
-- Example queries, agent decisions, and generated responses 
-- Evaluation results (metrics and LLM-based feedback) 
-- Final short report (1–2 pages) covering: 
-	- Hyperparameter tuning report: 
-	- What worked well 
-	- Key challenges
+#### 3. Test RAG System
+```bash
+cd src/02_rag
+python run_rag_evaluation.py
+```
+This demonstrates how the system retrieves relevant context from the knowledge base.
+
+#### 4. Run the Decision Agent
+```bash
+cd src/03_agent_decision_logic
+python run_decision_agent.py
+```
+This demonstrates how the agent decides between RAG and LLM-only responses based on relevance scores.
+
+#### 5. Test Fine-tuned Model (after training)
+```bash
+cd src/04_finetuning/new_application
+python run_final_agent.py
+```
+This demonstrates how to use the complete system with fine-tuned model, RAG, and decision logic.
+
+---
+
+### Knowledge Base Structure
+```
+src/02_rag/knowledge_base/
+├── billing_faq.txt                    # synthetic
+├── internet_troubleshooting.txt       # synthetic
+├── service_policies.txt               # synthetic
+├── website_customer_service_best_practices.txt
+├── website_internet_troubleshooting.txt
+└── windows_fix_wifi_connection_in_windows.txt
+```
+
+---
+
+## Key Results Summary
+
+The full evaluation report can be found here: **src\05_evaluation\custom_evaluation\evaluation_report.md**
+
+---
+
+## File Structure Overview
+```
+telekom-upskilling/
+├── src/
+│   ├── 00_setup/                   # Core LLM agent
+│   ├── 01_prompt_engineering/      # Prompt templates and evaluation
+│   ├── 02_rag/                     # Knowledge base and retrieval
+│   ├── 03_agent_decision_logic/    # Decision routing
+│   ├── 04_finetuning/              # Model adaptation
+│   └── 05_evaluation/              # Performance assessment
+├── prompts/                        # Template definitions
+├── models/                         # Trained model storage
+├── results/                        # Evaluation outputs
+└── requirements.txt                # Python dependencies
+```
+
+This project is one solution for the telekom-upskilling-certification and demonstrates a LLM customer support pipeline from basic prompting through fine-tuning and evaluation. Each phase builds upon the previous to see the evolution of the project.

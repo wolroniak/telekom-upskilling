@@ -6,7 +6,6 @@ def call_agent(prompt: str, context: dict | None = None, options: dict | None = 
     """
     Provider function for the final, complete 'Agent + RAG + Fine-tuning' system.
     """
-    # This robust path insertion prevents the FileNotFoundError
     sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'src', '04_finetuning', 'new_application')))
     sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'src', '02_rag')))
     sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'src', '03_agent_decision_logic')))

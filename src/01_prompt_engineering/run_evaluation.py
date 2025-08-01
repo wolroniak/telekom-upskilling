@@ -54,10 +54,8 @@ EVALUATION_CONFIG = {
 def create_promptfoo_config(model, experiment):
     """Dynamically creates a promptfoo configuration dictionary."""
     
-    # Combine specific and common assertions
     all_assertions = experiment["assertions"] + EVALUATION_CONFIG["common_assertions"]
     
-    # Add the grading provider to each assertion
     for assertion in all_assertions:
         assertion["provider"] = EVALUATION_CONFIG["grading_provider"]
 
@@ -87,7 +85,6 @@ def run_evaluation():
 
             config = create_promptfoo_config(model, experiment)
             
-            # dynamic config to temporary file
             temp_config_path = "temp_promptfooconfig.yaml"
             with open(temp_config_path, "w") as f:
                 yaml.dump(config, f)
@@ -97,7 +94,6 @@ def run_evaluation():
                 f"results_{model_name_safe}_{exp_name}.json"
             )
 
-            # promptfoo command
             command = [
                 "npx", "promptfoo", "eval",
                 "-c", temp_config_path,

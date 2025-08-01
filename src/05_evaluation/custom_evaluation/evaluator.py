@@ -21,7 +21,6 @@ from sacrebleu.metrics import BLEU
 import nltk
 from nltk.tokenize import word_tokenize
 
-# Download required NLTK data
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
@@ -36,7 +35,7 @@ class SystemEvaluator:
         
         self.client = anthropic.Anthropic(api_key=self.api_key) if self.api_key else None
         
-        # Test cases (customer complaints) with reference answers
+        # customer complaints
         self.test_cases = [
             {
                 "complaint": "My internet has been down since yesterday. I work from home and this is very frustrating!",
@@ -60,9 +59,8 @@ class SystemEvaluator:
             }
         ]
         
-        # Initialize BLEU metric
+        # Init BLEU
         self.bleu_metric = BLEU()
-        
         self.results = []
 
     def evaluate_with_claude(self, response: str) -> Dict[str, int]:
@@ -105,7 +103,6 @@ class SystemEvaluator:
     def calculate_bleu_scores(self, response: str, reference: str) -> Dict[str, float]:
         """Calculate BLEU-1, BLEU-2, BLEU-3 scores"""
         try:
-            # Use corpus_score instead of sentence_score for better compatibility
             bleu_1 = self.bleu_metric.corpus_score([response], [[reference]]).score
             
             from sacrebleu.metrics import BLEU
@@ -134,7 +131,6 @@ class SystemEvaluator:
         try:
             inputs = tokenizer(response, return_tensors="pt", truncation=True, max_length=512)
             
-            # Move inputs to the same device as the model
             device = next(model.parameters()).device
             inputs = {k: v.to(device) for k, v in inputs.items()}
             
@@ -163,7 +159,7 @@ class SystemEvaluator:
         # BERTScore
         metrics["bert_score"] = self.calculate_bert_score(response, reference)
         
-        # Perplexity (if model and tokenizer provided)
+        # Perplexity
         if model and tokenizer:
             metrics["perplexity"] = self.calculate_perplexity(response, model, tokenizer)
         else:
@@ -368,7 +364,7 @@ class SystemEvaluator:
             if not variant_results:
                 continue
                 
-            # Calculate averages
+            # averages
             avg_bleu1 = sum(r["metrics"]["bleu_1"] for r in variant_results) / len(variant_results)
             avg_bleu2 = sum(r["metrics"]["bleu_2"] for r in variant_results) / len(variant_results)
             avg_bleu3 = sum(r["metrics"]["bleu_3"] for r in variant_results) / len(variant_results)
@@ -389,7 +385,6 @@ class SystemEvaluator:
         
         report.append("")
         
-        # Detailed results for each variant
         for variant_name, variant_results in results.items():
             if not variant_results:
                 continue
@@ -417,11 +412,11 @@ class SystemEvaluator:
         """Save evaluation results and report"""
         output_dir = current_dir
         
-        # Save detailed JSON results
+        # JSON results
         with open(output_dir / "evaluation_results.json", "w", encoding="utf-8") as f:
             json.dump(results, f, indent=2, ensure_ascii=False)
         
-        # Save markdown report
+        # markdown report
         with open(output_dir / "evaluation_report.md", "w", encoding="utf-8") as f:
             f.write(report)
         
@@ -440,7 +435,6 @@ def main():
     print("### EVALUATION SUMMARY")
     print("=" * 80)
     
-    # Extract and display summary table
     summary_start = report.find("## System Variant Comparison")
     summary_end = report.find("## ", summary_start + 1)
     if summary_start != -1:

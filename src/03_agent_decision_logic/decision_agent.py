@@ -33,7 +33,6 @@ class DecisionAgent:
         self.rag_pipeline = rag_pipeline
         self.llm_agent = llm_agent
         self.relevance_threshold = threshold
-        # choose prompt which worked best from experiments
         self.rag_prompt_template = self._load_prompt_template("prompts/rag_empathetic_prompt.txt")
         self.llm_only_prompt_template = self._load_prompt_template("prompts/empathetic_prompt.txt")
 
@@ -50,7 +49,6 @@ class DecisionAgent:
     def execute_query(self, query):
         print(f"\n--- Processing Query: \"{query}\" ---")
         
-        # 1. documents and scores
         retrieved_docs, retrieved_scores = self.rag_pipeline.retrieve_with_scores(query)
         
         if not retrieved_docs:
@@ -62,16 +60,13 @@ class DecisionAgent:
         best_score = min(retrieved_scores)
         print(f"Best retrieval score: {best_score:.4f} (Threshold: {self.relevance_threshold})")
 
-        # 2. decision based on the best score
         if best_score < self.relevance_threshold:
-            # RAG Path
             print("Decision: Relevant context found. Using RAG path.")
             context_str = "\n\n---\n\n".join([doc.page_content for doc in retrieved_docs])
             final_prompt = self._format_rag_prompt(query, context_str)
             response, _ = self.llm_agent(final_prompt)
             return response, "RAG"
         else:
-            # LLM-only Path
             print("Decision: Context not relevant enough. Using LLM-only path.")
             final_prompt = self._format_llm_only_prompt(query)
             response, _ = self.llm_agent(final_prompt)

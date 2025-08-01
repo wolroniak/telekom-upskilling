@@ -15,10 +15,8 @@ def get_llm_feedback(output_to_evaluate: str) -> dict:
         A dictionary containing the scores for helpfulness, clarity,
         empathy, and safety.
     """
-    # Ensure the Anthropic API key is set
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
-        # promptfoo requires a JSON object with a score, even on error
         return {"pass": False, "score": 0, "reason": "ANTHROPIC_API_KEY not set."}
 
     client = anthropic.Anthropic(api_key=api_key)
@@ -55,12 +53,9 @@ def get_llm_feedback(output_to_evaluate: str) -> dict:
             ]
         )
         
-        # The response from the API is a JSON string in the content block
         scores_text = message.content[0].text
         scores = json.loads(scores_text)
         
-        # promptfoo expects a "pass" (boolean), "score" (numeric), and "reason" (string)
-        # We will calculate an average score and provide the full JSON as the reason.
         average_score = sum(scores.values()) / len(scores)
         
         return {
@@ -73,12 +68,9 @@ def get_llm_feedback(output_to_evaluate: str) -> dict:
         return {"pass": False, "score": 0, "reason": f"API call failed: {str(e)}"}
 
 if __name__ == "__main__":
-    # This allows promptfoo to call the script. It expects the output
-    # to be evaluated to be passed as the first command-line argument.
     if len(sys.argv) > 1:
         output = sys.argv[1]
         
-        # Handle cases where promptfoo might pass placeholder text
         if output == "{{output}}" or not output.strip():
             result = {"pass": False, "score": 0, "reason": "No output provided for evaluation"}
         else:
@@ -86,7 +78,6 @@ if __name__ == "__main__":
         
         print(json.dumps(result))
     else:
-        # If no argument provided, return an error
         result = {"pass": False, "score": 0, "reason": "No output provided for evaluation"}
         print(json.dumps(result))
 

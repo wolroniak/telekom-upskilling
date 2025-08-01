@@ -33,7 +33,6 @@ def create_finetuning_dataset(
             text += EOS_TOKEN
         return {"text": text}
 
-    # --- Load and process Alpaca dataset ---
     print("Processing Alpaca dataset...")
     alpaca_dataset = load_dataset("pankajmathur/alpaca_orca", split="train")
     if alpaca_samples > 0:
@@ -41,7 +40,6 @@ def create_finetuning_dataset(
     
     alpaca_formatted = alpaca_dataset.map(format_alpaca, remove_columns=[col for col in alpaca_dataset.column_names if col != 'text'])
 
-    # --- Load and process Anthropic HH-RLHF dataset ---
     print("Processing Anthropic HH-RLHF dataset...")
     hh_rlhf_dataset = load_dataset("Anthropic/hh-rlhf", split="train")
     if hh_rlhf_samples > 0:
@@ -49,7 +47,6 @@ def create_finetuning_dataset(
         
     hh_rlhf_formatted = hh_rlhf_dataset.map(format_hh_rlhf, remove_columns=[col for col in hh_rlhf_dataset.column_names if col != 'text'])
 
-    # --- Combine and save ---
     print("Combining and shuffling datasets...")
     combined_dataset = concatenate_datasets([alpaca_formatted, hh_rlhf_formatted]).shuffle(seed=42)
 

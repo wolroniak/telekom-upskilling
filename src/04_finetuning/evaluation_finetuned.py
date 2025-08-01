@@ -36,10 +36,11 @@ def generate_response(model, tokenizer, system_prompt, user_prompt):
 
 def main(
     base_model_id="Qwen/Qwen3-0.6B",
-    adapter_path="models/Qwen3-0.6B-fine-tuned/final_model"
+    adapter_path_1="models/hyperparameter_sweep/run_2_lr-0.0002_rank-32_epochs-1/final_model",
+    adapter_path_2="models/hyperparameter_sweep/run_4_lr-0.0001_rank-64_epochs-1/final_model"
 ):
     """
-    Compares the outputs of the base model and the fine-tuned model.
+    Compares the outputs of the base model and two fine-tuned models.
     """
     complaints = load_complaints()
     
@@ -55,38 +56,55 @@ def main(
     if base_tokenizer.pad_token is None:
         base_tokenizer.pad_token = base_tokenizer.eos_token
 
-    # --- Load Fine-Tuned Model ---
-    print("\nLoading fine-tuned model...")
-    ft_model = AutoModelForCausalLM.from_pretrained(
+    # --- Load Fine-Tuned Model 1 (Run 2) ---
+    print("\nLoading fine-tuned model 1 (Run 2: lr=2e-4, rank=32, epochs=1)...")
+    ft_model_1 = AutoModelForCausalLM.from_pretrained(
         base_model_id,
         device_map="auto",
         torch_dtype=torch.bfloat16,
         trust_remote_code=True,
     )
-    ft_model = PeftModel.from_pretrained(ft_model, adapter_path)
-    ft_model = ft_model.merge_and_unload()
+    ft_model_1 = PeftModel.from_pretrained(ft_model_1, adapter_path_1)
+    ft_model_1 = ft_model_1.merge_and_unload()
 
-    print("\n--- Starting Evaluation ---\n")
+    # --- Load Fine-Tuned Model 2 (Run 4) ---
+    print("\nLoading fine-tuned model 2 (Run 4: lr=1e-4, rank=64, epochs=1)...")
+    ft_model_2 = AutoModelForCausalLM.from_pretrained(
+        base_model_id,
+        device_map="auto",
+        torch_dtype=torch.bfloat16,
+        trust_remote_code=True,
+    )
+    ft_model_2 = PeftModel.from_pretrained(ft_model_2, adapter_path_2)
+    ft_model_2 = ft_model_2.merge_and_unload()
+
+    print("\n--- Starting 3-Way Model Comparison ---\n")
 
     system_prompt = "You are a helpful customer support agent. Please respond to the following customer complaint with empathy and provide a clear solution."
 
     for complaint in complaints:
         user_prompt = complaint['vars']['complaint']
         
-        print("="*80)
+        print("="*100)
         print(f"Complaint: {user_prompt}")
-        print("-"*80)
+        print("-"*100)
 
         # --- Base Model Response ---
-        print("Generating response from BASE model...")
+        print("BASE MODEL (Qwen3-0.6B Original):")
         base_response = generate_response(base_model, base_tokenizer, system_prompt, user_prompt)
-        print(f"Response (Base): {base_response.strip()}")
+        print(f"   {base_response.strip()}")
         
-        # --- Fine-Tuned Model Response ---
-        print("\nGenerating response from FINE-TUNED model...")
-        ft_response = generate_response(ft_model, base_tokenizer, system_prompt, user_prompt)
-        print(f"Response (Fine-Tuned): {ft_response.strip()}")
-        print("="*80 + "\n")
+        # --- Fine-Tuned Model 1 Response ---
+        print("\nFINE-TUNED MODEL 1 (Run 2: lr=2e-4, rank=32, epochs=1):")
+        ft_response_1 = generate_response(ft_model_1, base_tokenizer, system_prompt, user_prompt)
+        print(f"   {ft_response_1.strip()}")
+
+        # --- Fine-Tuned Model 2 Response ---
+        print("\nFINE-TUNED MODEL 2 (Run 4: lr=1e-4, rank=64, epochs=1):")
+        ft_response_2 = generate_response(ft_model_2, base_tokenizer, system_prompt, user_prompt)
+        print(f"   {ft_response_2.strip()}")
+        
+        print("="*100 + "\n")
 
 if __name__ == "__main__":
     main()

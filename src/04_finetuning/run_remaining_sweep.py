@@ -40,7 +40,6 @@ def run_remaining_hyperparameter_sweep():
         print(f"Dataset not found at {dataset_path}. Please run data_preparation.py again.")
         return
     
-    # Load the fresh dataset once
     try:
         dataset = load_from_disk(dataset_path)
         print("Successfully loaded dataset.")
@@ -51,7 +50,6 @@ def run_remaining_hyperparameter_sweep():
     experiments = get_remaining_experiments()
     base_output_dir = "models/hyperparameter_sweep"
     
-    # Starting experiment number from 2 since the first one was successful
     initial_experiment_num = 2 
 
     print(f"--- Starting Remaining Hyperparameter Sweep for {len(experiments)} Experiments ---")

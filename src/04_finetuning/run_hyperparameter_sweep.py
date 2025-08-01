@@ -54,7 +54,6 @@ def run_hyperparameter_sweep():
         print("="*80)
 
         try:
-            # Create a unique output directory for this specific experiment
             run_name = (
                 f"run_{experiment_num}_"
                 f"lr-{params['learning_rate']}_"
@@ -63,7 +62,6 @@ def run_hyperparameter_sweep():
             )
             output_dir = os.path.join(base_output_dir, run_name)
             
-            # Run the fine-tuning process with the current set of parameters
             fine_tune_model(
                 output_dir=output_dir,
                 **params

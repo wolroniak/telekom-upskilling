@@ -5,13 +5,11 @@ def call_agent(prompt: str, options: dict | None = None, context: dict | None = 
     """
     Provider function for the 'RAG-Only' system variant.
     """
-    # Correctly set up sys.path to find the modules
     sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'src', '00_setup')))
     sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'src', '02_rag')))
     from llm_agent import LLMAgent
     from rag_pipeline import RAGPipeline
 
-    # Extract the actual complaint from the prompt context
     if isinstance(prompt, dict) and 'complaint' in prompt:
         complaint = prompt['complaint']
     else:
