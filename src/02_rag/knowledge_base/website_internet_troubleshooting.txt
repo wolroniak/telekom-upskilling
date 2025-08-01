@@ -1,0 +1,209 @@
+It’s incredibly frustrating when your internet isn’t working. Whether you’re hooked up to Wi-Fi but without internet access or you’re having trouble with a wired Ethernet connection, we’ll show you the quickest methods to identify the problem and get back online.
+
+When it comes to internet troubleshooting, you can either methodically work your way through the troubleshooting steps or just start trying fixes until something works. While methodical troubleshooting is better for getting to the bottom of an issue once and for all, sometimes you just need to get back online ASAP. We’ll start with our top five internet quick fixes and then walk you through a more thorough troubleshooting process if you’re still having issues.
+
+In this guide:
+
+Top 5 quick fixes for internet issues | Is it your internet signal or your Wi-Fi? | Connected to Wi-Fi but no internet access | Wi-Fi troubleshooting | Advanced troubleshooting | Complete list of internet fixes
+
+Top 5 quick fixes for internet issues
+1. Restart your modem and router or internet gateway (modem/router combo)
+An equipment restart is the golden rule of internet troubleshooting. This should always be your first step; it’s simple, easy, and incredibly effective.
+See instructions.
+
+2. Check your wires and cables
+Loose or damaged cables can cause a wide range of internet issues. Sometimes the fix is as simple as tightening a connection, other times you may need to replace a cable or require the help of a broadband technician.
+See instructions.
+
+3. Move your router to a better spot
+If you’re using the internet over Wi-Fi, router placement is crucial. Sometimes moving your router just a few feet or changing the angle of the antennae can make a world of difference.
+See instructions.
+
+4. Test a different website or online activity
+The problem may be with the app, service, or website you’re trying to access. If only one website or service is acting up, your connection is probably fine.
+
+5. Check for an outage
+If the problem is on your internet provider’s end, you can’t do anything to fix it. Make sure to check for outages before getting too deep into your troubleshooting efforts.
+See instructions. 
+
+Internet still down?
+It’s time to dig a bit deeper with our troubleshooting guide.
+
+First, we’ll help you diagnose whether you have an internet signal issue or a problem with your Wi-Fi. Once you’ve discovered which type of problem you have, continue to either the internet signal troubleshooting section or the Wi-Fi troubleshooting section. If you’re still stumped, use our advanced troubleshooting section for particularly tricky circumstances.
+
+Lastly, you can jump straight to our complete list of internet fixes and try each one until you’re back online.
+
+If you’re experiencing repeated slowdowns and outages, you may have an internet plan that’s too slow. Take our “How much speed do I need?” test to see if you’re paying for enough internet bandwidth to deliver the goods.
+
+Is the problem with your internet signal or your Wi-Fi?
+Internet signal issues have different fixes than Wi-Fi issues—so, it’s important to find out which you’re dealing with. Examples of internet signal issues include problems with the signal coming from your ISP, modem issues, and issues with the wiring in and around your home. Wi-Fi issues are problems with your router’s wireless signal, such as interference from obstructions, too much distance between the router and devices, or interference from other networks and electronics.
+
+You can tell an internet signal issue from a Wi-Fi issue with a few key troubleshooting steps.
+
+Check the lights on your equipment
+Nearly all modems, routers, and internet gateways have LED status lights. Your equipment may also have just one led light, in which case, the light’s behavior or color is often used to signal different statuses. ISPs usually provide a guide to interpreting the behavior of their rental equipment. If you purchased your own equipment, consult the manual.
+
+Either way, the LED status lights on your equipment are very helpful for quickly diagnosing network problems.
+
+Check the internet signal light
+
+The light for an internet connection is on your modem and is usually labeled WAN, Internet, or with a globe icon, and you can tell the internet is on if the light (usually white or green) is solid.
+
+If the light is red or not on at all, you have an internet signal problem as your modem isn’t successfully connecting to the internet. If this is you, skip ahead to our internet signal troubleshooting section.
+
+Check the Wi-Fi light
+
+The WiFi light(s) will be on your router or somewhere below the internet connection light if you have a modem/router combo unit. Labels for Wi-Fi lights vary but usually will read “2.4G” and “5G,” “WLAN,” or “Wireless.” These lights should be on and are usually blinking. If the Wi-Fi light(s) are off or red, your router isn’t broadcasting a signal. Skip to the Wi-Fi troubleshooting section to begin troubleshooting.
+
+If the equipment lights aren’t revealing your internet issue, read on for the next steps.
+
+Pro tip:
+
+A lot of internet issues can be remedied quickly by simply restarting your modem and router. It’s an easy fix that’s always worth a shot.
+
+To restart your modem and router, unplug the power cable for 10 seconds and plug it back in. The equipment will take a few minutes to reboot.
+
+Try using an Ethernet cable to test your connection
+If you’re on Wi-Fi, try plugging your computer directly into your router with an Ethernet cable. This is the tried and true way to differentiate signal issues from Wi-Fi issues. Connect the Ethernet cable to the port on your computer, and plug the other end into one of the LAN ports on your router (these are usually yellow). Connecting the computer directly to the single port on a modem bypasses essential security measures built into the router. You need to connect to a router or modem/router combo unit to remain protected online.
+
+If your internet comes back when you use a wired Ethernet connection, then you have a Wi-Fi problem; continue to our Wi-Fi troubleshooting section. If you still don’t have internet, the problem is likely bigger than your Wi-Fi, but it might still just be your device. Try accessing the web on a different device. If you still can’t get online, move on to our internet signal troubleshooting section to solve the problem.
+
+Check for an internet outage
+It could be that you’re not the only one whose internet is down. You can find information about internet outages on the website Down Detector, or you can contact your internet service provider (ISP) to investigate.
+
+The site or service you’re trying to access could also be down. Try a few different websites. If they load properly, the original website you went to could be down for all visitors. (You can confirm this by typing in the URL at downforeveryoneorjustme.com.)
+
+Pro tip:
+
+If the internet is down in your area, you may be able to use your cell phone as a mobile Wi-Fi hotspot to get online. You can also go outside in search of a public Wi-Fi hotspot to connect to. Take a look at our Wi-Fi hotspot guide for more details.
+
+Wi-Fi connected but no internet?
+If you’re connected to your Wi-Fi but still don’t have internet access, there’s probably something wrong with your internet signal. The same is true if you’re unable to access the internet using a wired connection. Try these fixes first.
+
+Restart your modem, router, and device
+Restarting your modem and router should be the first thing you do when encountering an internet signal issue. Don’t skip this step! This is almost always what tech support will ask you to try first, as it often solves the problem.
+
+To restart your equipment, unplug the power cable for 60 seconds and plug it back in. The equipment will take a few minutes to reboot. It’s also a good idea to restart the device you’re using.
+
+Check your cables and wires
+Wires and cables often become loose or damaged from repeated stress. The cable feeding the internet to your modem is either a coaxial cable (the same used for cable TV), an Ethernet cable, or a phone cable. The best way to troubleshoot cables is to swap them all out, if you have extras.
+
+Otherwise, make sure to connect these cables to both the modem and your wall outlet. Ethernet and phone cables should click when they are fully inserted into a socket. Coaxial cables should be screwed on snugly.
+
+Also, check for damage. See if the cable looks torn or perhaps chewed by a pet. Ethernet and phone cables are especially prone to damage, as the copper wires inside are very thin.
+
+Pro tip:
+
+Ethernet cables aren’t all the same, and it’s important to get the right type of Ethernet cable for the job. See our Ethernet cable article to make sure you have the right one.
+
+When should you contact your provider?
+It’s a good idea to try some basic troubleshooting before contacting your provider. Restarting your modem and checking wires will likely be the first things tech support asks you to do anyway. But if you can’t solve the problem on your own, it’s time to contact your provider for a little help.
+
+If your ISP isn’t experiencing an outage, it can run a diagnostic on your modem to see if it’s properly communicating with the network. They may discover many possible issues, including a low signal level, device registration issues, obsolete equipment (even if you rent it from the ISP), or a glitch in the system. You may have just forgotten to pay your internet bill.
+
+Most large ISPs also have online/chat support options through their websites and apps, if you’d rather not sit on the phone.
+
+If you’re still having issues after trying these common fixes, move on to our advanced troubleshooting section further down the page.
+
+Wi-Fi troubleshooting
+You’ve figured out something’s wrong with your Wi-Fi. Wi-Fi gets tricky. It’s radio waves being broadcast by your router and a number of things can interfere with those waves. Try these common fixes first.
+
+Restart your router
+This fix works so often that it’s always worth trying first. The process is the same as restarting a modem: unplug the router or gateway, wait 60 seconds, and plug it back in. It will take several minutes to reboot.
+
+Switch Wi-Fi bands (2.4 GHz and 5 GHz)
+Your router likely transmits Wi-Fi over two frequency bands: 2.4 GHz and 5 GHz. Try switching from the frequency band you’re on to the other. This helps you avoid temporary interference while also resetting the connection between your device and router. It’s a common convention for the 5 GHz network to have a “5G” label following the network name (i.e., “Jane’s Wi-Fi [5G]). The 2.4 GHz band is commonly labeled with your network name (i.e. “Jane’s Wi-Fi) without a frequency label.
+
+Each frequency band has its strengths and weaknesses. Basically, 5 GHz Wi-Fi is faster but doesn’t travel as far. 2.4 GHz Wi-Fi travels farther but is slower than 5 GHz and more susceptible to radio interference. So, if you’re far from the router try the 2.4 GHz, and if you need more speed and are within range, give the 5 GHz a try.
+
+Test your Wi-Fi on different devices
+If you’re on your laptop, use your phone or tablet to see if you can get online over the same Wi-Fi connection. If it connects on one device but not the other, then you know that your internet Wi-Fi is fine and it’s the disconnected device that’s having the problem.
+
+Try a different Ethernet cable
+If you have a spare Ethernet cable, swap it out with the one currently plugged into your modem and router and see if it makes a difference. Cables don’t last forever, and it could be that your current Ethernet cable has kicked the bucket and needs to be replaced.
+
+Pro tip:
+
+Need a recommendation on a good replacement cable? This Cat-6 Ethernet cable is fast, sturdy, and affordable. You could also check out our article on the best Ethernet cables to learn more.
+
+Amazon.com Price (as of 10/21/2021 10:15 MST). See full disclaimer.
+
+ 
+
+Improve the position of your device and/or router
+For router placement, the key factors to consider are distance, elevation, and obstructions. So, when picking a spot for your router, choose somewhere central and elevated relative to your devices. Furthermore, do your best to avoid placing the router near any electronic devices (especially microwaves) or any disruptive surfaces.
+
+Wi-Fi radio waves get weaker the farther they travel. You want to have your device well within your router’s broadcast range. The Wi-Fi signal meter on your device helps you judge the strength of the current Wi-Fi signal.
+
+It’s also important to place the router as high as possible. The router’s signal broadcast isn’t a straight line to your device. The signal shines out like light from a bulb, creating a dome of Wi-Fi. A higher router means a wider broadcast and better coverage of your home.
+
+Certain obstructions and devices can also interfere with Wi-Fi signals. Wi-Fi can easily pass through wood and drywall, but tile, metal, concrete, and especially water are known to interfere with Wi-Fi signals. Microwaves, baby monitors, and cordless phones are also Wi-Fi killers when they’re running.
+
+See our article on where to place your router to learn more about finding that perfect spot for your Wi-Fi machine.
+
+Advanced troubleshooting
+If none of those quick fixes did the trick, there’s still plenty of things to try. Keep in mind that your problem may have more than one cause. That’s why we recommend going through the above steps first, as they are the most common fixes for internet issues.
+
+Below are some of the rarer internet issues. These can be tough to diagnose, so it’s best to just try each one out until something works.
+
+Run the internet troubleshooter (for Windows)
+If you’re on Windows, run the built-in troubleshooter program to see if your computer can fix the issue for you. For Windows 10, click to Start > Settings > Update & Security > Troubleshoot, and then select the troubleshooter for Internet Connections.
+
+Run Apple Diagnostics or Apple Hardware Test (for macOS)
+Most Mac computers have a built-in diagnostic program that will scan your computer for issues, including problems with Wi-Fi. It’s called Apple Diagnostics on models from 2013 and later and Apple Hardware Test on models from 2012 with at least OS X 10.8.4.
+
+To run Apple Diagnostics, disconnect any Ethernet cables and external drives, hit restart, and hold down the D key as the computer reboots. Pick a language, and then the diagnostic will launch automatically.
+
+You can launch the Apple Hardware Test in a similar way. The only difference is that you should press Return or the right arrow button when the screen for the test appears as your computer is restarting and you’re given the prompt to choose a language.
+
+Clear your DNS cache
+The DNS cache is a digital log your browser uses as a shortcut to quickly load web pages you’ve visited before. But your cache can create technical issues if there’s a glitch or online malware has inserted uninvited URLs into your cache.
+
+Here’s how to clear your cache on different devices:
+
+Windows
+Go to the Command Prompt by doing one of these things:
+
+Option 1: Type “cmd” into the search bar
+
+Option 2: Find the Command Prompt shortcut in the Windows System folder
+
+Option 3: Type “cmd” into the Run window.
+
+Once you’re in the Command Prompt, type in “ipconfig /flushdns.” Hit Enter to flush the cache.
+
+Mac
+Run the Terminal app. You can find it one of these ways:
+
+Option 1: Open Terminal in the Utilities folder.
+
+Option 2: Search “Terminal” using the Spotlight function.
+
+In the Terminal app, enter the command to flush your cache. The command you’ll type can be slightly different depending on your Mac operating system (OS):
+
+Yosemite and after: sudo killall -HUP mDNSResponder
+
+Yosemite 10.10–10.10.3: sudo discoveryutil mdnsflushcache
+
+Mavericks, Mountain Lion, Lion: sudo killall -HUP mDNSResponder
+
+Snow Leopard: sudo dscacheutil -flushcache
+
+You’ll be prompted to enter in the administrator password for your account. Then your cache is flushed—and hopefully any glitches with it.
+
+Smartphones
+On an iPhone or Apple device, there are two easy ways to clear your DNS cache:
+
+Option 1: Switch on and then switch off Airplane Mode.
+
+Option 2: Restart your device.
+
+For Android devices, here’s how you clear your DNS cache:
+
+Step 1: Type “chrome://net-internals/#dns” into the URL bar in Chrome.
+
+Step 2: Tap the DNS menu.
+
+Step 3: Click Clear Host Cache.
+
+After you’ve cleared your cache, test your connection to see if it’s back online.

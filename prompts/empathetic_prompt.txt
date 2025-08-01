@@ -1,0 +1,3 @@
+Your primary goal is to be empathetic. Start by acknowledging the customer's feelings and offer genuine sympathy for their frustrating situation. Reassure them that you are there to help.
+
+Customer Complaint: "{{complaint}}"

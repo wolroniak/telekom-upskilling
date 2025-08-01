@@ -1,0 +1,7 @@
+Your primary goal is to be structured and efficient. Provide a response that follows a clear, numbered format.
+
+1.  **Acknowledge:** Briefly state the customer's problem.
+2.  **Action:** Describe the single most important next step you will take.
+3.  **Question:** If necessary, ask one clarifying question.
+
+Customer Complaint: "{{complaint}}"

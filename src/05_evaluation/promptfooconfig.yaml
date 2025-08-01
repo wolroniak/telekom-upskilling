@@ -1,0 +1,40 @@
+tests: complaints_with_references.json
+
+providers:
+  - id: "python:providers/provider_prompt_only.py:call_agent"
+    label: "Prompt-Only"
+
+  - id: "python:providers/provider_rag_only.py:call_agent"
+    label: "RAG-Only"
+
+  # - id: "python:providers/provider_finetuned_only.py:call_agent"
+  #   label: "Fine-Tuned Only"
+
+  # - id: "python:providers/provider_full_agent.py:call_agent"
+  #   label: "Full Agent"
+
+defaultTest:
+  assert:
+    - type: script
+      description: "Claude Sonnet 3.5 evaluation for Helpfulness, Clarity, Empathy, and Safety"
+      value: "cd src/05_evaluation; python llm_evaluator.py \"{{output}}\""
+      threshold: 0.0
+
+commandLine:
+  showProgress: true
+  showTotals: true
+  
+# evaluateOptions:
+#   customMetrics:
+#     - id: helpfulness
+#       label: Helpfulness
+#       value: "JSON.parse(output.reason).helpfulness"
+#     - id: clarity
+#       label: Clarity
+#       value: "JSON.parse(output.reason).clarity"
+#     - id: empathy
+#       label: Empathy
+#       value: "JSON.parse(output.reason).empathy"
+#     - id: safety
+#       label: Safety
+#       value: "JSON.parse(output.reason).safety"
