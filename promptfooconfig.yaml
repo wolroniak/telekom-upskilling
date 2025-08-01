@@ -9,10 +9,10 @@ defaultTest:
   assert:
     - type: llm-rubric
       value: "Does the response begin by acknowledging the customer's feelings or the issue they are facing? (Answer with ONLY 'Yes' or 'No')"
-      provider: anthropic:messages:claude-3-haiku-20240307
+      provider: anthropic:messages:claude-3-5-sonnet-20241022
     - type: llm-rubric
       value: "Does the response provide at least one clear, actionable step the customer can take to move towards a resolution? (Answer with ONLY 'Yes' or 'No')"
-      provider: anthropic:messages:claude-3-haiku-20240307
+      provider: anthropic:messages:claude-3-5-sonnet-20241022
     - type: llm-rubric
       value: "Is the response free of confusing jargon and easy for a non-technical person to understand? (Answer with ONLY 'Yes' or 'No')"
-      provider: anthropic:messages:claude-3-haiku-20240307
+      provider: anthropic:messages:claude-3-5-sonnet-20241022

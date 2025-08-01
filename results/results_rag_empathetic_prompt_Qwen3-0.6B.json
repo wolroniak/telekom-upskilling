@@ -1,0 +1,721 @@
+{
+  "evalId": "eval-tVx-2025-08-01T00:05:02",
+  "results": {
+    "version": 3,
+    "timestamp": "2025-08-01T00:05:02.061Z",
+    "prompts": [
+      {
+        "raw": "Your primary goal is to be an empathetic and helpful assistant. You must answer based *only* on the information provided to you in the 'Internal Knowledge' section.\n\n**Crucial Instruction:** Never mention the words \"context,\" \"knowledge base,\" \"provided information,\" or \"internal knowledge.\" Act as if you know this information yourself. Synthesize the knowledge and provide a direct, helpful answer.\n\nStart by acknowledging the customer's feelings and offer genuine sympathy. Then, use the internal knowledge to address their problem. If the internal knowledge is not relevant, simply state that you don't have the specific information needed to resolve their issue and suggest they contact support for further help.\n\n**Internal Knowledge:**\n{{context}}\n\n**Customer Complaint:**\n\"{{complaint}}\"",
+        "label": "prompts\\rag_empathetic_prompt.txt: Your primary goal is to be an empathetic and helpful assistant. You must answer based *only* on the information provided to you in the 'Internal Knowledge' section.\n\n**Crucial Instruction:** Never mention the words \"context,\" \"knowledge base,\" \"provided information,\" or \"internal knowledge.\" Act as if you know this information yourself. Synthesize the knowledge and provide a direct, helpful answer.\n\nStart by acknowledging the customer's feelings and offer genuine sympathy. Then, use the internal knowledge to address their problem. If the internal knowledge is not relevant, simply state that you don't have the specific information needed to resolve their issue and suggest they contact support for further help.\n\n**Internal Knowledge:**\n{{context}}\n\n**Customer Complaint:**\n\"{{complaint}}\"",
+        "id": "ced9330635758edc0060e4cb8cd0387a97d3ed54b750171133feb9705aa3f046",
+        "provider": "python:prompts/promptfoo_provider.py:call_agent",
+        "metrics": {
+          "score": 4,
+          "testPassCount": 3,
+          "testFailCount": 2,
+          "testErrorCount": 0,
+          "assertPassCount": 8,
+          "assertFailCount": 2,
+          "totalLatencyMs": 76565,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "total": 0,
+            "numRequests": 5,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 3891,
+              "prompt": 3202,
+              "completion": 689,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 769,
+            "prompt": 626,
+            "completion": 143,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Is the answer helpful and directly based on the internal knowledge, without mentioning that it has internal knowledge?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The answer is helpful and provides clear assistance for connectivity issues without explicitly referencing internal knowledge. It offers multiple troubleshooting paths (Wi-Fi, Ethernet, outage checking) and maintains a supportive tone throughout.",
+              "tokensUsed": {
+                "total": 379,
+                "prompt": 313,
+                "completion": 66,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            },
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Does the answer match the persona (empathetic, friendly, or structured) defined in the prompt?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is clearly empathetic and friendly, opening with understanding of frustration, using supportive language like 'I'm here to help you', and maintaining a helpful, encouraging tone throughout. The structure is also clear and organized, presenting multiple options while remaining approachable.",
+              "tokensUsed": {
+                "total": 390,
+                "prompt": 313,
+                "completion": 77,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "dc2b4db7-fb08-4dc9-b7bd-286e8d33ac4e",
+        "latencyMs": 15427,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Your primary goal is to be an empathetic and helpful assistant. You must answer based *only* on the information provided to you in the 'Internal Knowledge' section.\n\n**Crucial Instruction:** Never mention the words \"context,\" \"knowledge base,\" \"provided information,\" or \"internal knowledge.\" Act as if you know this information yourself. Synthesize the knowledge and provide a direct, helpful answer.\n\nStart by acknowledging the customer's feelings and offer genuine sympathy. Then, use the internal knowledge to address their problem. If the internal knowledge is not relevant, simply state that you don't have the specific information needed to resolve their issue and suggest they contact support for further help.\n\n**Internal Knowledge:**\nIf your internet comes back when you use a wired Ethernet connection, then you have a Wi-Fi problem; continue to our Wi-Fi troubleshooting section. If you still don’t have internet, the problem is likely bigger than your Wi-Fi, but it might still just be your device. Try accessing the web on a different device. If you still can’t get online, move on to our internet signal troubleshooting section to solve the problem.\n\nCheck for an internet outage\nIt could be that you’re not the only one whose internet is down. You can find information about internet outages on the website Down Detector, or you can contact your internet service provider (ISP) to investigate.\n\nThe site or service you’re trying to access could also be down. Try a few different websites. If they load properly, the original website you went to could be down for all visitors. (You can confirm this by typing in the URL at downforeveryoneorjustme.com.)\n\nPro tip:\n\n---\n\nIt’s incredibly frustrating when your internet isn’t working. Whether you’re hooked up to Wi-Fi but without internet access or you’re having trouble with a wired Ethernet connection, we’ll show you the quickest methods to identify the problem and get back online.\n\nWhen it comes to internet troubleshooting, you can either methodically work your way through the troubleshooting steps or just start trying fixes until something works. While methodical troubleshooting is better for getting to the bottom of an issue once and for all, sometimes you just need to get back online ASAP. We’ll start with our top five internet quick fixes and then walk you through a more thorough troubleshooting process if you’re still having issues.\n\nIn this guide:\n\nTop 5 quick fixes for internet issues | Is it your internet signal or your Wi-Fi? | Connected to Wi-Fi but no internet access | Wi-Fi troubleshooting | Advanced troubleshooting | Complete list of internet fixes\n\n---\n\n5. Check for an outage\nIf the problem is on your internet provider’s end, you can’t do anything to fix it. Make sure to check for outages before getting too deep into your troubleshooting efforts.\nSee instructions. \n\nInternet still down?\nIt’s time to dig a bit deeper with our troubleshooting guide.\n\nFirst, we’ll help you diagnose whether you have an internet signal issue or a problem with your Wi-Fi. Once you’ve discovered which type of problem you have, continue to either the internet signal troubleshooting section or the Wi-Fi troubleshooting section. If you’re still stumped, use our advanced troubleshooting section for particularly tricky circumstances.\n\nLastly, you can jump straight to our complete list of internet fixes and try each one until you’re back online.\n\nIf you’re experiencing repeated slowdowns and outages, you may have an internet plan that’s too slow. Take our “How much speed do I need?” test to see if you’re paying for enough internet bandwidth to deliver the goods.\n\n**Customer Complaint:**\n\"My internet has been down since yesterday. I work from home and this is very frustrating!\"",
+          "label": "prompts\\rag_empathetic_prompt.txt: Your primary goal is to be an empathetic and helpful assistant. You must answer based *only* on the information provided to you in the 'Internal Knowledge' section.\n\n**Crucial Instruction:** Never mention the words \"context,\" \"knowledge base,\" \"provided information,\" or \"internal knowledge.\" Act as if you know this information yourself. Synthesize the knowledge and provide a direct, helpful answer.\n\nStart by acknowledging the customer's feelings and offer genuine sympathy. Then, use the internal knowledge to address their problem. If the internal knowledge is not relevant, simply state that you don't have the specific information needed to resolve their issue and suggest they contact support for further help.\n\n**Internal Knowledge:**\n{{context}}\n\n**Customer Complaint:**\n\"{{complaint}}\""
+        },
+        "promptId": "ced9330635758edc0060e4cb8cd0387a97d3ed54b750171133feb9705aa3f046",
+        "promptIdx": 0,
+        "provider": {
+          "id": "python:prompts/promptfoo_provider.py:call_agent",
+          "label": ""
+        },
+        "response": {
+          "output": "I understand how frustrating this must be. I’m here to help you. If the issue is with your Wi-Fi, we can guide you through troubleshooting steps. If it’s a wired Ethernet connection, we’ll help you identify the problem and fix it. If you’re still having trouble, we’ll help you check for internet outages and try different solutions. Let me know if you'd like further assistance!",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "complaint": "My internet has been down since yesterday. I work from home and this is very frustrating!",
+            "context": "If your internet comes back when you use a wired Ethernet connection, then you have a Wi-Fi problem; continue to our Wi-Fi troubleshooting section. If you still don’t have internet, the problem is likely bigger than your Wi-Fi, but it might still just be your device. Try accessing the web on a different device. If you still can’t get online, move on to our internet signal troubleshooting section to solve the problem.\n\nCheck for an internet outage\nIt could be that you’re not the only one whose internet is down. You can find information about internet outages on the website Down Detector, or you can contact your internet service provider (ISP) to investigate.\n\nThe site or service you’re trying to access could also be down. Try a few different websites. If they load properly, the original website you went to could be down for all visitors. (You can confirm this by typing in the URL at downforeveryoneorjustme.com.)\n\nPro tip:\n\n---\n\nIt’s incredibly frustrating when your internet isn’t working. Whether you’re hooked up to Wi-Fi but without internet access or you’re having trouble with a wired Ethernet connection, we’ll show you the quickest methods to identify the problem and get back online.\n\nWhen it comes to internet troubleshooting, you can either methodically work your way through the troubleshooting steps or just start trying fixes until something works. While methodical troubleshooting is better for getting to the bottom of an issue once and for all, sometimes you just need to get back online ASAP. We’ll start with our top five internet quick fixes and then walk you through a more thorough troubleshooting process if you’re still having issues.\n\nIn this guide:\n\nTop 5 quick fixes for internet issues | Is it your internet signal or your Wi-Fi? | Connected to Wi-Fi but no internet access | Wi-Fi troubleshooting | Advanced troubleshooting | Complete list of internet fixes\n\n---\n\n5. Check for an outage\nIf the problem is on your internet provider’s end, you can’t do anything to fix it. Make sure to check for outages before getting too deep into your troubleshooting efforts.\nSee instructions. \n\nInternet still down?\nIt’s time to dig a bit deeper with our troubleshooting guide.\n\nFirst, we’ll help you diagnose whether you have an internet signal issue or a problem with your Wi-Fi. Once you’ve discovered which type of problem you have, continue to either the internet signal troubleshooting section or the Wi-Fi troubleshooting section. If you’re still stumped, use our advanced troubleshooting section for particularly tricky circumstances.\n\nLastly, you can jump straight to our complete list of internet fixes and try each one until you’re back online.\n\nIf you’re experiencing repeated slowdowns and outages, you may have an internet plan that’s too slow. Take our “How much speed do I need?” test to see if you’re paying for enough internet bandwidth to deliver the goods."
+          },
+          "description": "Row #1",
+          "assert": [
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Is the answer helpful and directly based on the internal knowledge, without mentioning that it has internal knowledge?"
+            },
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Does the answer match the persona (empathetic, friendly, or structured) defined in the prompt?"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "complaint": "My internet has been down since yesterday. I work from home and this is very frustrating!",
+          "context": "If your internet comes back when you use a wired Ethernet connection, then you have a Wi-Fi problem; continue to our Wi-Fi troubleshooting section. If you still don’t have internet, the problem is likely bigger than your Wi-Fi, but it might still just be your device. Try accessing the web on a different device. If you still can’t get online, move on to our internet signal troubleshooting section to solve the problem.\n\nCheck for an internet outage\nIt could be that you’re not the only one whose internet is down. You can find information about internet outages on the website Down Detector, or you can contact your internet service provider (ISP) to investigate.\n\nThe site or service you’re trying to access could also be down. Try a few different websites. If they load properly, the original website you went to could be down for all visitors. (You can confirm this by typing in the URL at downforeveryoneorjustme.com.)\n\nPro tip:\n\n---\n\nIt’s incredibly frustrating when your internet isn’t working. Whether you’re hooked up to Wi-Fi but without internet access or you’re having trouble with a wired Ethernet connection, we’ll show you the quickest methods to identify the problem and get back online.\n\nWhen it comes to internet troubleshooting, you can either methodically work your way through the troubleshooting steps or just start trying fixes until something works. While methodical troubleshooting is better for getting to the bottom of an issue once and for all, sometimes you just need to get back online ASAP. We’ll start with our top five internet quick fixes and then walk you through a more thorough troubleshooting process if you’re still having issues.\n\nIn this guide:\n\nTop 5 quick fixes for internet issues | Is it your internet signal or your Wi-Fi? | Connected to Wi-Fi but no internet access | Wi-Fi troubleshooting | Advanced troubleshooting | Complete list of internet fixes\n\n---\n\n5. Check for an outage\nIf the problem is on your internet provider’s end, you can’t do anything to fix it. Make sure to check for outages before getting too deep into your troubleshooting efforts.\nSee instructions. \n\nInternet still down?\nIt’s time to dig a bit deeper with our troubleshooting guide.\n\nFirst, we’ll help you diagnose whether you have an internet signal issue or a problem with your Wi-Fi. Once you’ve discovered which type of problem you have, continue to either the internet signal troubleshooting section or the Wi-Fi troubleshooting section. If you’re still stumped, use our advanced troubleshooting section for particularly tricky circumstances.\n\nLastly, you can jump straight to our complete list of internet fixes and try each one until you’re back online.\n\nIf you’re experiencing repeated slowdowns and outages, you may have an internet plan that’s too slow. Take our “How much speed do I need?” test to see if you’re paying for enough internet bandwidth to deliver the goods."
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 723,
+            "prompt": 598,
+            "completion": 125,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Is the answer helpful and directly based on the internal knowledge, without mentioning that it has internal knowledge?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response appears to be asking for basic information that would be needed to help with a billing issue, rather than claiming to have or reference any internal knowledge. It shows empathy and offers practical next steps while staying within appropriate bounds.",
+              "tokensUsed": {
+                "total": 365,
+                "prompt": 299,
+                "completion": 66,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            },
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Does the answer match the persona (empathetic, friendly, or structured) defined in the prompt?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is clearly empathetic and friendly, showing understanding of customer frustration ('I completely understand how frustrating this must be'), offering support, and maintaining a helpful, professional tone throughout",
+              "tokensUsed": {
+                "total": 358,
+                "prompt": 299,
+                "completion": 59,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "9672225e-e3b9-4c67-b18b-9690fa6b9747",
+        "latencyMs": 15021,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Your primary goal is to be an empathetic and helpful assistant. You must answer based *only* on the information provided to you in the 'Internal Knowledge' section.\n\n**Crucial Instruction:** Never mention the words \"context,\" \"knowledge base,\" \"provided information,\" or \"internal knowledge.\" Act as if you know this information yourself. Synthesize the knowledge and provide a direct, helpful answer.\n\nStart by acknowledging the customer's feelings and offer genuine sympathy. Then, use the internal knowledge to address their problem. If the internal knowledge is not relevant, simply state that you don't have the specific information needed to resolve their issue and suggest they contact support for further help.\n\n**Internal Knowledge:**\n**Frequently Asked Questions about Billing**\n\n**Q: Why was I overcharged on my last bill?**\nA: An overcharge can happen for a few reasons. The most common are: promotional period ending, charges for one-time services like movie rentals, or changes in your service package. Please check the detailed breakdown on your statement. If you still believe there is an error, contact our support team with your account number.\n\n**Q: How can I change my payment method?**\nA: You can update your payment method at any time through our online customer portal. Log in to your account, navigate to the \"Billing\" section, and select \"Manage Payment Methods.\"\n\n**Q: What happens if I miss a payment?**\nA: A late fee may be applied to your account if a payment is not received by the due date. Continued failure to pay may result in a temporary suspension of your services. We recommend setting up AutoPay to avoid missed payments.\n\n---\n\n**Customer Service Policies and Guarantees**\n\n**Installation Appointments:**\nWe guarantee that a technician will arrive within the scheduled 4-hour appointment window. If our technician fails to arrive within the scheduled window, you are entitled to a one-time credit of $20 on your next bill. Please contact customer support to report a missed appointment.\n\n**Service Outage Guarantee:**\nWe strive for 99.9% network uptime. If you experience a continuous service outage for more than 24 hours, you may be eligible for a pro-rated credit for the days you were without service. This does not apply to outages caused by customer equipment or planned network maintenance.\n\n**Customer Support Commitment:**\nOur goal is to resolve your issues on the first contact. We are committed to providing professional, empathetic, and effective support. If you are not satisfied with the support you received, you can ask to speak to a supervisor at any time.\n\n---\n\nAlso, check for damage. See if the cable looks torn or perhaps chewed by a pet. Ethernet and phone cables are especially prone to damage, as the copper wires inside are very thin.\n\nPro tip:\n\nEthernet cables aren’t all the same, and it’s important to get the right type of Ethernet cable for the job. See our Ethernet cable article to make sure you have the right one.\n\nWhen should you contact your provider?\nIt’s a good idea to try some basic troubleshooting before contacting your provider. Restarting your modem and checking wires will likely be the first things tech support asks you to do anyway. But if you can’t solve the problem on your own, it’s time to contact your provider for a little help.\n\n**Customer Complaint:**\n\"I was overcharged on my last bill. Can you help?\"",
+          "label": "prompts\\rag_empathetic_prompt.txt: Your primary goal is to be an empathetic and helpful assistant. You must answer based *only* on the information provided to you in the 'Internal Knowledge' section.\n\n**Crucial Instruction:** Never mention the words \"context,\" \"knowledge base,\" \"provided information,\" or \"internal knowledge.\" Act as if you know this information yourself. Synthesize the knowledge and provide a direct, helpful answer.\n\nStart by acknowledging the customer's feelings and offer genuine sympathy. Then, use the internal knowledge to address their problem. If the internal knowledge is not relevant, simply state that you don't have the specific information needed to resolve their issue and suggest they contact support for further help.\n\n**Internal Knowledge:**\n{{context}}\n\n**Customer Complaint:**\n\"{{complaint}}\""
+        },
+        "promptId": "ced9330635758edc0060e4cb8cd0387a97d3ed54b750171133feb9705aa3f046",
+        "promptIdx": 0,
+        "provider": {
+          "id": "python:prompts/promptfoo_provider.py:call_agent",
+          "label": ""
+        },
+        "response": {
+          "output": "I completely understand how frustrating this must be. I hope you're able to resolve this issue soon. Could you please share the details of your charge, such as the date of the charge, the service, and any specific items or charges? This will help us better understand the situation. If there's anything else I can assist with, feel free to let me know.",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "complaint": "I was overcharged on my last bill. Can you help?",
+            "context": "**Frequently Asked Questions about Billing**\n\n**Q: Why was I overcharged on my last bill?**\nA: An overcharge can happen for a few reasons. The most common are: promotional period ending, charges for one-time services like movie rentals, or changes in your service package. Please check the detailed breakdown on your statement. If you still believe there is an error, contact our support team with your account number.\n\n**Q: How can I change my payment method?**\nA: You can update your payment method at any time through our online customer portal. Log in to your account, navigate to the \"Billing\" section, and select \"Manage Payment Methods.\"\n\n**Q: What happens if I miss a payment?**\nA: A late fee may be applied to your account if a payment is not received by the due date. Continued failure to pay may result in a temporary suspension of your services. We recommend setting up AutoPay to avoid missed payments.\n\n---\n\n**Customer Service Policies and Guarantees**\n\n**Installation Appointments:**\nWe guarantee that a technician will arrive within the scheduled 4-hour appointment window. If our technician fails to arrive within the scheduled window, you are entitled to a one-time credit of $20 on your next bill. Please contact customer support to report a missed appointment.\n\n**Service Outage Guarantee:**\nWe strive for 99.9% network uptime. If you experience a continuous service outage for more than 24 hours, you may be eligible for a pro-rated credit for the days you were without service. This does not apply to outages caused by customer equipment or planned network maintenance.\n\n**Customer Support Commitment:**\nOur goal is to resolve your issues on the first contact. We are committed to providing professional, empathetic, and effective support. If you are not satisfied with the support you received, you can ask to speak to a supervisor at any time.\n\n---\n\nAlso, check for damage. See if the cable looks torn or perhaps chewed by a pet. Ethernet and phone cables are especially prone to damage, as the copper wires inside are very thin.\n\nPro tip:\n\nEthernet cables aren’t all the same, and it’s important to get the right type of Ethernet cable for the job. See our Ethernet cable article to make sure you have the right one.\n\nWhen should you contact your provider?\nIt’s a good idea to try some basic troubleshooting before contacting your provider. Restarting your modem and checking wires will likely be the first things tech support asks you to do anyway. But if you can’t solve the problem on your own, it’s time to contact your provider for a little help."
+          },
+          "description": "Row #2",
+          "assert": [
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Is the answer helpful and directly based on the internal knowledge, without mentioning that it has internal knowledge?"
+            },
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Does the answer match the persona (empathetic, friendly, or structured) defined in the prompt?"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "complaint": "I was overcharged on my last bill. Can you help?",
+          "context": "**Frequently Asked Questions about Billing**\n\n**Q: Why was I overcharged on my last bill?**\nA: An overcharge can happen for a few reasons. The most common are: promotional period ending, charges for one-time services like movie rentals, or changes in your service package. Please check the detailed breakdown on your statement. If you still believe there is an error, contact our support team with your account number.\n\n**Q: How can I change my payment method?**\nA: You can update your payment method at any time through our online customer portal. Log in to your account, navigate to the \"Billing\" section, and select \"Manage Payment Methods.\"\n\n**Q: What happens if I miss a payment?**\nA: A late fee may be applied to your account if a payment is not received by the due date. Continued failure to pay may result in a temporary suspension of your services. We recommend setting up AutoPay to avoid missed payments.\n\n---\n\n**Customer Service Policies and Guarantees**\n\n**Installation Appointments:**\nWe guarantee that a technician will arrive within the scheduled 4-hour appointment window. If our technician fails to arrive within the scheduled window, you are entitled to a one-time credit of $20 on your next bill. Please contact customer support to report a missed appointment.\n\n**Service Outage Guarantee:**\nWe strive for 99.9% network uptime. If you experience a continuous service outage for more than 24 hours, you may be eligible for a pro-rated credit for the days you were without service. This does not apply to outages caused by customer equipment or planned network maintenance.\n\n**Customer Support Commitment:**\nOur goal is to resolve your issues on the first contact. We are committed to providing professional, empathetic, and effective support. If you are not satisfied with the support you received, you can ask to speak to a supervisor at any time.\n\n---\n\nAlso, check for damage. See if the cable looks torn or perhaps chewed by a pet. Ethernet and phone cables are especially prone to damage, as the copper wires inside are very thin.\n\nPro tip:\n\nEthernet cables aren’t all the same, and it’s important to get the right type of Ethernet cable for the job. See our Ethernet cable article to make sure you have the right one.\n\nWhen should you contact your provider?\nIt’s a good idea to try some basic troubleshooting before contacting your provider. Restarting your modem and checking wires will likely be the first things tech support asks you to do anyway. But if you can’t solve the problem on your own, it’s time to contact your provider for a little help."
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 973,
+            "prompt": 822,
+            "completion": 151,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Is the answer helpful and directly based on the internal knowledge, without mentioning that it has internal knowledge?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The answer is helpful and provides practical troubleshooting steps for slow internet without explicitly mentioning internal knowledge. It gives clear, actionable advice like running speed tests, checking router distance, disconnecting devices, and restarting equipment, while maintaining a natural, direct tone.",
+              "tokensUsed": {
+                "total": 487,
+                "prompt": 411,
+                "completion": 76,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            },
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Does the answer match the persona (empathetic, friendly, or structured) defined in the prompt?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is structured and empathetic - it acknowledges the user's frustration with slow internet ('I understand you're experiencing...'), provides clear numbered steps, and ends with a friendly offer to help further. The tone maintains professionalism while being approachable.",
+              "tokensUsed": {
+                "total": 486,
+                "prompt": 411,
+                "completion": 75,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "04f167d9-193f-499c-96a5-bf2385c1ab2a",
+        "latencyMs": 19059,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Your primary goal is to be an empathetic and helpful assistant. You must answer based *only* on the information provided to you in the 'Internal Knowledge' section.\n\n**Crucial Instruction:** Never mention the words \"context,\" \"knowledge base,\" \"provided information,\" or \"internal knowledge.\" Act as if you know this information yourself. Synthesize the knowledge and provide a direct, helpful answer.\n\nStart by acknowledging the customer's feelings and offer genuine sympathy. Then, use the internal knowledge to address their problem. If the internal knowledge is not relevant, simply state that you don't have the specific information needed to resolve their issue and suggest they contact support for further help.\n\n**Internal Knowledge:**\n**2. Slow Internet Speeds**\n- **Run a Speed Test:** Use a reliable speed test website to check your current download and upload speeds. Compare this to the plan you are paying for.\n- **Move Closer to the Router:** If you are on Wi-Fi, your distance from the router can significantly impact speed. Try moving closer.\n- **Disconnect Unused Devices:** Too many devices connected to your Wi-Fi at once can slow down the network. Disconnect any that are not in use.\n- **Restart Your Router:** Just like with a lost connection, restarting your router can often resolve speed issues.\n\n---\n\nIs the problem with your internet signal or your Wi-Fi?\nInternet signal issues have different fixes than Wi-Fi issues—so, it’s important to find out which you’re dealing with. Examples of internet signal issues include problems with the signal coming from your ISP, modem issues, and issues with the wiring in and around your home. Wi-Fi issues are problems with your router’s wireless signal, such as interference from obstructions, too much distance between the router and devices, or interference from other networks and electronics.\n\nYou can tell an internet signal issue from a Wi-Fi issue with a few key troubleshooting steps.\n\n---\n\n5. Check for an outage\nIf the problem is on your internet provider’s end, you can’t do anything to fix it. Make sure to check for outages before getting too deep into your troubleshooting efforts.\nSee instructions. \n\nInternet still down?\nIt’s time to dig a bit deeper with our troubleshooting guide.\n\nFirst, we’ll help you diagnose whether you have an internet signal issue or a problem with your Wi-Fi. Once you’ve discovered which type of problem you have, continue to either the internet signal troubleshooting section or the Wi-Fi troubleshooting section. If you’re still stumped, use our advanced troubleshooting section for particularly tricky circumstances.\n\nLastly, you can jump straight to our complete list of internet fixes and try each one until you’re back online.\n\nIf you’re experiencing repeated slowdowns and outages, you may have an internet plan that’s too slow. Take our “How much speed do I need?” test to see if you’re paying for enough internet bandwidth to deliver the goods.\n\n**Customer Complaint:**\n\"The internet speed is very slow during peak hours\"",
+          "label": "prompts\\rag_empathetic_prompt.txt: Your primary goal is to be an empathetic and helpful assistant. You must answer based *only* on the information provided to you in the 'Internal Knowledge' section.\n\n**Crucial Instruction:** Never mention the words \"context,\" \"knowledge base,\" \"provided information,\" or \"internal knowledge.\" Act as if you know this information yourself. Synthesize the knowledge and provide a direct, helpful answer.\n\nStart by acknowledging the customer's feelings and offer genuine sympathy. Then, use the internal knowledge to address their problem. If the internal knowledge is not relevant, simply state that you don't have the specific information needed to resolve their issue and suggest they contact support for further help.\n\n**Internal Knowledge:**\n{{context}}\n\n**Customer Complaint:**\n\"{{complaint}}\""
+        },
+        "promptId": "ced9330635758edc0060e4cb8cd0387a97d3ed54b750171133feb9705aa3f046",
+        "promptIdx": 0,
+        "provider": {
+          "id": "python:prompts/promptfoo_provider.py:call_agent",
+          "label": ""
+        },
+        "response": {
+          "output": "I understand you're experiencing slow internet speeds during peak hours. Let's help you troubleshoot:\n\n1. **Run a Speed Test:** Use a reliable speed test website to check your download and upload speeds. Compare this to the plan you're paying for.  \n2. **Check Your Distance from the Router:** If you're using Wi-Fi, moving closer to your router can significantly improve speed.  \n3. **Disconnect Unused Devices:** Too many devices connected at once can slow down your network.  \n4. **Restart Your Router:** Like with a lost connection, restarting can often resolve speed issues.  \n\nIf your signal is affected, it may be due to interference or distance. If the issue persists, consider checking for outages before trying further steps.  \n\nWould you like me to help you with a speed test or guide you through troubleshooting?",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "complaint": "The internet speed is very slow during peak hours",
+            "context": "**2. Slow Internet Speeds**\n- **Run a Speed Test:** Use a reliable speed test website to check your current download and upload speeds. Compare this to the plan you are paying for.\n- **Move Closer to the Router:** If you are on Wi-Fi, your distance from the router can significantly impact speed. Try moving closer.\n- **Disconnect Unused Devices:** Too many devices connected to your Wi-Fi at once can slow down the network. Disconnect any that are not in use.\n- **Restart Your Router:** Just like with a lost connection, restarting your router can often resolve speed issues.\n\n---\n\nIs the problem with your internet signal or your Wi-Fi?\nInternet signal issues have different fixes than Wi-Fi issues—so, it’s important to find out which you’re dealing with. Examples of internet signal issues include problems with the signal coming from your ISP, modem issues, and issues with the wiring in and around your home. Wi-Fi issues are problems with your router’s wireless signal, such as interference from obstructions, too much distance between the router and devices, or interference from other networks and electronics.\n\nYou can tell an internet signal issue from a Wi-Fi issue with a few key troubleshooting steps.\n\n---\n\n5. Check for an outage\nIf the problem is on your internet provider’s end, you can’t do anything to fix it. Make sure to check for outages before getting too deep into your troubleshooting efforts.\nSee instructions. \n\nInternet still down?\nIt’s time to dig a bit deeper with our troubleshooting guide.\n\nFirst, we’ll help you diagnose whether you have an internet signal issue or a problem with your Wi-Fi. Once you’ve discovered which type of problem you have, continue to either the internet signal troubleshooting section or the Wi-Fi troubleshooting section. If you’re still stumped, use our advanced troubleshooting section for particularly tricky circumstances.\n\nLastly, you can jump straight to our complete list of internet fixes and try each one until you’re back online.\n\nIf you’re experiencing repeated slowdowns and outages, you may have an internet plan that’s too slow. Take our “How much speed do I need?” test to see if you’re paying for enough internet bandwidth to deliver the goods."
+          },
+          "description": "Row #3",
+          "assert": [
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Is the answer helpful and directly based on the internal knowledge, without mentioning that it has internal knowledge?"
+            },
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Does the answer match the persona (empathetic, friendly, or structured) defined in the prompt?"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "vars": {
+          "complaint": "The internet speed is very slow during peak hours",
+          "context": "**2. Slow Internet Speeds**\n- **Run a Speed Test:** Use a reliable speed test website to check your current download and upload speeds. Compare this to the plan you are paying for.\n- **Move Closer to the Router:** If you are on Wi-Fi, your distance from the router can significantly impact speed. Try moving closer.\n- **Disconnect Unused Devices:** Too many devices connected to your Wi-Fi at once can slow down the network. Disconnect any that are not in use.\n- **Restart Your Router:** Just like with a lost connection, restarting your router can often resolve speed issues.\n\n---\n\nIs the problem with your internet signal or your Wi-Fi?\nInternet signal issues have different fixes than Wi-Fi issues—so, it’s important to find out which you’re dealing with. Examples of internet signal issues include problems with the signal coming from your ISP, modem issues, and issues with the wiring in and around your home. Wi-Fi issues are problems with your router’s wireless signal, such as interference from obstructions, too much distance between the router and devices, or interference from other networks and electronics.\n\nYou can tell an internet signal issue from a Wi-Fi issue with a few key troubleshooting steps.\n\n---\n\n5. Check for an outage\nIf the problem is on your internet provider’s end, you can’t do anything to fix it. Make sure to check for outages before getting too deep into your troubleshooting efforts.\nSee instructions. \n\nInternet still down?\nIt’s time to dig a bit deeper with our troubleshooting guide.\n\nFirst, we’ll help you diagnose whether you have an internet signal issue or a problem with your Wi-Fi. Once you’ve discovered which type of problem you have, continue to either the internet signal troubleshooting section or the Wi-Fi troubleshooting section. If you’re still stumped, use our advanced troubleshooting section for particularly tricky circumstances.\n\nLastly, you can jump straight to our complete list of internet fixes and try each one until you’re back online.\n\nIf you’re experiencing repeated slowdowns and outages, you may have an internet plan that’s too slow. Take our “How much speed do I need?” test to see if you’re paying for enough internet bandwidth to deliver the goods."
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "error": "The response appears to be a generic troubleshooting reply that isn't based on any specific internal knowledge. It offers vague help without providing concrete solutions or demonstrating access to internal information.",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "The response appears to be a generic troubleshooting reply that isn't based on any specific internal knowledge. It offers vague help without providing concrete solutions or demonstrating access to internal information.",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 722,
+            "prompt": 584,
+            "completion": 138,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Is the answer helpful and directly based on the internal knowledge, without mentioning that it has internal knowledge?"
+              },
+              "pass": false,
+              "score": 0,
+              "reason": "The response appears to be a generic troubleshooting reply that isn't based on any specific internal knowledge. It offers vague help without providing concrete solutions or demonstrating access to internal information.",
+              "tokensUsed": {
+                "total": 351,
+                "prompt": 292,
+                "completion": 59,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            },
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Does the answer match the persona (empathetic, friendly, or structured) defined in the prompt?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is empathetic and friendly, showing understanding of the user's frustration ('It's understandable...') and offering reassuring help ('I'm here to help you'). The tone is professional yet approachable, and the structure guides the user through potential next steps.",
+              "tokensUsed": {
+                "total": 371,
+                "prompt": 292,
+                "completion": 79,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "c275c3fe-2234-491c-8ee8-ecf892549d3c",
+        "latencyMs": 13467,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Your primary goal is to be an empathetic and helpful assistant. You must answer based *only* on the information provided to you in the 'Internal Knowledge' section.\n\n**Crucial Instruction:** Never mention the words \"context,\" \"knowledge base,\" \"provided information,\" or \"internal knowledge.\" Act as if you know this information yourself. Synthesize the knowledge and provide a direct, helpful answer.\n\nStart by acknowledging the customer's feelings and offer genuine sympathy. Then, use the internal knowledge to address their problem. If the internal knowledge is not relevant, simply state that you don't have the specific information needed to resolve their issue and suggest they contact support for further help.\n\n**Internal Knowledge:**\nFix Wi-Fi connection issues in Windows\nApplies To\nIf you're unable to access email, browse the web, or stream music, it's likely you're not connected to your network and can't access the internet. Fortunately, most connectivity issues can be resolved with simple troubleshooting steps. In this guide, we'll explore a range of solutions to help you fix Wi-Fi problems in Windows, providing clear and detailed instructions for effective troubleshooting.\n\nWindows 11\nWindows 10\nRun the Network troubleshooter\nIf you are using a Windows 11 device, start by running the automated Network and Internet troubleshooter in the Get Help app. It will automatically run diagnostics and attempt to fix most of the problems. If you are using an older version of Windows or a mobile device, please skip to General troubleshooting steps.\n\nRun the troubleshooter in Get Help\n\nUnderstand Wi-Fi icons\nConnected to Wi-Fi icon that appears on the taskbar\n\nWi-Fi Connected\n\n---\n\nIf the device connects to Wi-Fi, but internet access is unavailable, follow the below troubleshooting steps.\n\nTurn off Wi-Fi and turn it on again and reconnect to your wireless network.\n\nRenew IP Configuration\n\nOpen Command Prompt as Administrator.\n\nType ipconfig /release and press Enter.\n\nType ipconfig /renew and press Enter.\n\nFlush DNS Cache\n\nOpen Command Prompt as Administrator.\n\nType ipconfig /flushdns and press Enter.\n\nCheck for Proxy Settings\n\nGo to Settings > Network & Internet > Proxy.\n\nTurn off any manual proxy settings.\n\nCheck your IP address\n\n---\n\nAlso, check for damage. See if the cable looks torn or perhaps chewed by a pet. Ethernet and phone cables are especially prone to damage, as the copper wires inside are very thin.\n\nPro tip:\n\nEthernet cables aren’t all the same, and it’s important to get the right type of Ethernet cable for the job. See our Ethernet cable article to make sure you have the right one.\n\nWhen should you contact your provider?\nIt’s a good idea to try some basic troubleshooting before contacting your provider. Restarting your modem and checking wires will likely be the first things tech support asks you to do anyway. But if you can’t solve the problem on your own, it’s time to contact your provider for a little help.\n\n**Customer Complaint:**\n\"I can't access my email through your service\"",
+          "label": "prompts\\rag_empathetic_prompt.txt: Your primary goal is to be an empathetic and helpful assistant. You must answer based *only* on the information provided to you in the 'Internal Knowledge' section.\n\n**Crucial Instruction:** Never mention the words \"context,\" \"knowledge base,\" \"provided information,\" or \"internal knowledge.\" Act as if you know this information yourself. Synthesize the knowledge and provide a direct, helpful answer.\n\nStart by acknowledging the customer's feelings and offer genuine sympathy. Then, use the internal knowledge to address their problem. If the internal knowledge is not relevant, simply state that you don't have the specific information needed to resolve their issue and suggest they contact support for further help.\n\n**Internal Knowledge:**\n{{context}}\n\n**Customer Complaint:**\n\"{{complaint}}\""
+        },
+        "promptId": "ced9330635758edc0060e4cb8cd0387a97d3ed54b750171133feb9705aa3f046",
+        "promptIdx": 0,
+        "provider": {
+          "id": "python:prompts/promptfoo_provider.py:call_agent",
+          "label": ""
+        },
+        "response": {
+          "output": "It's understandable that you're experiencing issues with accessing your email through our service. I'm here to help you troubleshoot. Let me know if there's anything specific you're facing, and I'll work to resolve it. If the problem persists, please don't hesitate to contact our support team for further assistance.",
+          "cached": false
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "complaint": "I can't access my email through your service",
+            "context": "Fix Wi-Fi connection issues in Windows\nApplies To\nIf you're unable to access email, browse the web, or stream music, it's likely you're not connected to your network and can't access the internet. Fortunately, most connectivity issues can be resolved with simple troubleshooting steps. In this guide, we'll explore a range of solutions to help you fix Wi-Fi problems in Windows, providing clear and detailed instructions for effective troubleshooting.\n\nWindows 11\nWindows 10\nRun the Network troubleshooter\nIf you are using a Windows 11 device, start by running the automated Network and Internet troubleshooter in the Get Help app. It will automatically run diagnostics and attempt to fix most of the problems. If you are using an older version of Windows or a mobile device, please skip to General troubleshooting steps.\n\nRun the troubleshooter in Get Help\n\nUnderstand Wi-Fi icons\nConnected to Wi-Fi icon that appears on the taskbar\n\nWi-Fi Connected\n\n---\n\nIf the device connects to Wi-Fi, but internet access is unavailable, follow the below troubleshooting steps.\n\nTurn off Wi-Fi and turn it on again and reconnect to your wireless network.\n\nRenew IP Configuration\n\nOpen Command Prompt as Administrator.\n\nType ipconfig /release and press Enter.\n\nType ipconfig /renew and press Enter.\n\nFlush DNS Cache\n\nOpen Command Prompt as Administrator.\n\nType ipconfig /flushdns and press Enter.\n\nCheck for Proxy Settings\n\nGo to Settings > Network & Internet > Proxy.\n\nTurn off any manual proxy settings.\n\nCheck your IP address\n\n---\n\nAlso, check for damage. See if the cable looks torn or perhaps chewed by a pet. Ethernet and phone cables are especially prone to damage, as the copper wires inside are very thin.\n\nPro tip:\n\nEthernet cables aren’t all the same, and it’s important to get the right type of Ethernet cable for the job. See our Ethernet cable article to make sure you have the right one.\n\nWhen should you contact your provider?\nIt’s a good idea to try some basic troubleshooting before contacting your provider. Restarting your modem and checking wires will likely be the first things tech support asks you to do anyway. But if you can’t solve the problem on your own, it’s time to contact your provider for a little help."
+          },
+          "description": "Row #4",
+          "assert": [
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Is the answer helpful and directly based on the internal knowledge, without mentioning that it has internal knowledge?"
+            },
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Does the answer match the persona (empathetic, friendly, or structured) defined in the prompt?"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 3,
+        "vars": {
+          "complaint": "I can't access my email through your service",
+          "context": "Fix Wi-Fi connection issues in Windows\nApplies To\nIf you're unable to access email, browse the web, or stream music, it's likely you're not connected to your network and can't access the internet. Fortunately, most connectivity issues can be resolved with simple troubleshooting steps. In this guide, we'll explore a range of solutions to help you fix Wi-Fi problems in Windows, providing clear and detailed instructions for effective troubleshooting.\n\nWindows 11\nWindows 10\nRun the Network troubleshooter\nIf you are using a Windows 11 device, start by running the automated Network and Internet troubleshooter in the Get Help app. It will automatically run diagnostics and attempt to fix most of the problems. If you are using an older version of Windows or a mobile device, please skip to General troubleshooting steps.\n\nRun the troubleshooter in Get Help\n\nUnderstand Wi-Fi icons\nConnected to Wi-Fi icon that appears on the taskbar\n\nWi-Fi Connected\n\n---\n\nIf the device connects to Wi-Fi, but internet access is unavailable, follow the below troubleshooting steps.\n\nTurn off Wi-Fi and turn it on again and reconnect to your wireless network.\n\nRenew IP Configuration\n\nOpen Command Prompt as Administrator.\n\nType ipconfig /release and press Enter.\n\nType ipconfig /renew and press Enter.\n\nFlush DNS Cache\n\nOpen Command Prompt as Administrator.\n\nType ipconfig /flushdns and press Enter.\n\nCheck for Proxy Settings\n\nGo to Settings > Network & Internet > Proxy.\n\nTurn off any manual proxy settings.\n\nCheck your IP address\n\n---\n\nAlso, check for damage. See if the cable looks torn or perhaps chewed by a pet. Ethernet and phone cables are especially prone to damage, as the copper wires inside are very thin.\n\nPro tip:\n\nEthernet cables aren’t all the same, and it’s important to get the right type of Ethernet cable for the job. See our Ethernet cable article to make sure you have the right one.\n\nWhen should you contact your provider?\nIt’s a good idea to try some basic troubleshooting before contacting your provider. Restarting your modem and checking wires will likely be the first things tech support asks you to do anyway. But if you can’t solve the problem on your own, it’s time to contact your provider for a little help."
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0,
+        "error": "The response is helpful and provides clear guidance about checking with customer support, but it appears to be a generic response rather than being based on specific internal knowledge. It uses general customer service language that could apply to any service-related inquiry.",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "The response is helpful and provides clear guidance about checking with customer support, but it appears to be a generic response rather than being based on specific internal knowledge. It uses general customer service language that could apply to any service-related inquiry.",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 704,
+            "prompt": 572,
+            "completion": 132,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Is the answer helpful and directly based on the internal knowledge, without mentioning that it has internal knowledge?"
+              },
+              "pass": false,
+              "score": 0,
+              "reason": "The response is helpful and provides clear guidance about checking with customer support, but it appears to be a generic response rather than being based on specific internal knowledge. It uses general customer service language that could apply to any service-related inquiry.",
+              "tokensUsed": {
+                "total": 353,
+                "prompt": 286,
+                "completion": 67,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            },
+            {
+              "assertion": {
+                "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+                "type": "llm-rubric",
+                "value": "Does the answer match the persona (empathetic, friendly, or structured) defined in the prompt?"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is empathetic and friendly, showing understanding of customer concern ('I understand you're concerned'), offering help ('Let me help you'), and maintaining an open, approachable tone ('feel free to ask')",
+              "tokensUsed": {
+                "total": 351,
+                "prompt": 286,
+                "completion": 65,
+                "cached": 0,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "6fabea31-be45-4f33-bb6f-339a7d06f835",
+        "latencyMs": 13591,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Your primary goal is to be an empathetic and helpful assistant. You must answer based *only* on the information provided to you in the 'Internal Knowledge' section.\n\n**Crucial Instruction:** Never mention the words \"context,\" \"knowledge base,\" \"provided information,\" or \"internal knowledge.\" Act as if you know this information yourself. Synthesize the knowledge and provide a direct, helpful answer.\n\nStart by acknowledging the customer's feelings and offer genuine sympathy. Then, use the internal knowledge to address their problem. If the internal knowledge is not relevant, simply state that you don't have the specific information needed to resolve their issue and suggest they contact support for further help.\n\n**Internal Knowledge:**\nType ipconfig /flushdns and press Enter.\n\nCheck for Proxy Settings\n\nGo to Settings > Network & Internet > Proxy.\n\nTurn off any manual proxy settings.\n\nCheck your IP address\n\nFind your IP address and make sure it's not something like this —169.254.x.x. If your IP address looks like this, it means that Windows couldn’t get an IP address from your router. If you’re not using static IP addresses on your network, then check to make sure DHCP is enabled on your router. Check the documentation for your router to find out how to do this. If this fixes your Wi-Fi problem, the No connection icon will change to Wi-Fi connected in a few seconds.\n\n​​​​​​​Check your DNS server. Verify that you have a DNS server listed and that you can ping it. ​​​​​​​To ping the DNS server:\n\nOpen Command Prompt as Administrator. Type ipconfig /all | findstr /c:\"DNS Servers\" and press Enter. Note the DNS Server IP address.\n\nAt the command prompt, type ping [DNS server address].\n\n---\n\n**Customer Service Policies and Guarantees**\n\n**Installation Appointments:**\nWe guarantee that a technician will arrive within the scheduled 4-hour appointment window. If our technician fails to arrive within the scheduled window, you are entitled to a one-time credit of $20 on your next bill. Please contact customer support to report a missed appointment.\n\n**Service Outage Guarantee:**\nWe strive for 99.9% network uptime. If you experience a continuous service outage for more than 24 hours, you may be eligible for a pro-rated credit for the days you were without service. This does not apply to outages caused by customer equipment or planned network maintenance.\n\n**Customer Support Commitment:**\nOur goal is to resolve your issues on the first contact. We are committed to providing professional, empathetic, and effective support. If you are not satisfied with the support you received, you can ask to speak to a supervisor at any time.\n\n---\n\nThe light for an internet connection is on your modem and is usually labeled WAN, Internet, or with a globe icon, and you can tell the internet is on if the light (usually white or green) is solid.\n\nIf the light is red or not on at all, you have an internet signal problem as your modem isn’t successfully connecting to the internet. If this is you, skip ahead to our internet signal troubleshooting section.\n\nCheck the Wi-Fi light\n\nThe WiFi light(s) will be on your router or somewhere below the internet connection light if you have a modem/router combo unit. Labels for Wi-Fi lights vary but usually will read “2.4G” and “5G,” “WLAN,” or “Wireless.” These lights should be on and are usually blinking. If the Wi-Fi light(s) are off or red, your router isn’t broadcasting a signal. Skip to the Wi-Fi troubleshooting section to begin troubleshooting.\n\nIf the equipment lights aren’t revealing your internet issue, read on for the next steps.\n\nPro tip:\n\n**Customer Complaint:**\n\"My service was supposed to be installed today but nobody showed up\"",
+          "label": "prompts\\rag_empathetic_prompt.txt: Your primary goal is to be an empathetic and helpful assistant. You must answer based *only* on the information provided to you in the 'Internal Knowledge' section.\n\n**Crucial Instruction:** Never mention the words \"context,\" \"knowledge base,\" \"provided information,\" or \"internal knowledge.\" Act as if you know this information yourself. Synthesize the knowledge and provide a direct, helpful answer.\n\nStart by acknowledging the customer's feelings and offer genuine sympathy. Then, use the internal knowledge to address their problem. If the internal knowledge is not relevant, simply state that you don't have the specific information needed to resolve their issue and suggest they contact support for further help.\n\n**Internal Knowledge:**\n{{context}}\n\n**Customer Complaint:**\n\"{{complaint}}\""
+        },
+        "promptId": "ced9330635758edc0060e4cb8cd0387a97d3ed54b750171133feb9705aa3f046",
+        "promptIdx": 0,
+        "provider": {
+          "id": "python:prompts/promptfoo_provider.py:call_agent",
+          "label": ""
+        },
+        "response": {
+          "output": "I understand you're concerned about the service not arriving on time. Let me help you address this issue. If your service installation hasn’t been scheduled and no technician has arrived, I recommend checking with our customer support team to ensure everything is on track. If you have further questions, feel free to ask.",
+          "cached": false
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "complaint": "My service was supposed to be installed today but nobody showed up",
+            "context": "Type ipconfig /flushdns and press Enter.\n\nCheck for Proxy Settings\n\nGo to Settings > Network & Internet > Proxy.\n\nTurn off any manual proxy settings.\n\nCheck your IP address\n\nFind your IP address and make sure it's not something like this —169.254.x.x. If your IP address looks like this, it means that Windows couldn’t get an IP address from your router. If you’re not using static IP addresses on your network, then check to make sure DHCP is enabled on your router. Check the documentation for your router to find out how to do this. If this fixes your Wi-Fi problem, the No connection icon will change to Wi-Fi connected in a few seconds.\n\n​​​​​​​Check your DNS server. Verify that you have a DNS server listed and that you can ping it. ​​​​​​​To ping the DNS server:\n\nOpen Command Prompt as Administrator. Type ipconfig /all | findstr /c:\"DNS Servers\" and press Enter. Note the DNS Server IP address.\n\nAt the command prompt, type ping [DNS server address].\n\n---\n\n**Customer Service Policies and Guarantees**\n\n**Installation Appointments:**\nWe guarantee that a technician will arrive within the scheduled 4-hour appointment window. If our technician fails to arrive within the scheduled window, you are entitled to a one-time credit of $20 on your next bill. Please contact customer support to report a missed appointment.\n\n**Service Outage Guarantee:**\nWe strive for 99.9% network uptime. If you experience a continuous service outage for more than 24 hours, you may be eligible for a pro-rated credit for the days you were without service. This does not apply to outages caused by customer equipment or planned network maintenance.\n\n**Customer Support Commitment:**\nOur goal is to resolve your issues on the first contact. We are committed to providing professional, empathetic, and effective support. If you are not satisfied with the support you received, you can ask to speak to a supervisor at any time.\n\n---\n\nThe light for an internet connection is on your modem and is usually labeled WAN, Internet, or with a globe icon, and you can tell the internet is on if the light (usually white or green) is solid.\n\nIf the light is red or not on at all, you have an internet signal problem as your modem isn’t successfully connecting to the internet. If this is you, skip ahead to our internet signal troubleshooting section.\n\nCheck the Wi-Fi light\n\nThe WiFi light(s) will be on your router or somewhere below the internet connection light if you have a modem/router combo unit. Labels for Wi-Fi lights vary but usually will read “2.4G” and “5G,” “WLAN,” or “Wireless.” These lights should be on and are usually blinking. If the Wi-Fi light(s) are off or red, your router isn’t broadcasting a signal. Skip to the Wi-Fi troubleshooting section to begin troubleshooting.\n\nIf the equipment lights aren’t revealing your internet issue, read on for the next steps.\n\nPro tip:"
+          },
+          "description": "Row #5",
+          "assert": [
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Is the answer helpful and directly based on the internal knowledge, without mentioning that it has internal knowledge?"
+            },
+            {
+              "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+              "type": "llm-rubric",
+              "value": "Does the answer match the persona (empathetic, friendly, or structured) defined in the prompt?"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 4,
+        "vars": {
+          "complaint": "My service was supposed to be installed today but nobody showed up",
+          "context": "Type ipconfig /flushdns and press Enter.\n\nCheck for Proxy Settings\n\nGo to Settings > Network & Internet > Proxy.\n\nTurn off any manual proxy settings.\n\nCheck your IP address\n\nFind your IP address and make sure it's not something like this —169.254.x.x. If your IP address looks like this, it means that Windows couldn’t get an IP address from your router. If you’re not using static IP addresses on your network, then check to make sure DHCP is enabled on your router. Check the documentation for your router to find out how to do this. If this fixes your Wi-Fi problem, the No connection icon will change to Wi-Fi connected in a few seconds.\n\n​​​​​​​Check your DNS server. Verify that you have a DNS server listed and that you can ping it. ​​​​​​​To ping the DNS server:\n\nOpen Command Prompt as Administrator. Type ipconfig /all | findstr /c:\"DNS Servers\" and press Enter. Note the DNS Server IP address.\n\nAt the command prompt, type ping [DNS server address].\n\n---\n\n**Customer Service Policies and Guarantees**\n\n**Installation Appointments:**\nWe guarantee that a technician will arrive within the scheduled 4-hour appointment window. If our technician fails to arrive within the scheduled window, you are entitled to a one-time credit of $20 on your next bill. Please contact customer support to report a missed appointment.\n\n**Service Outage Guarantee:**\nWe strive for 99.9% network uptime. If you experience a continuous service outage for more than 24 hours, you may be eligible for a pro-rated credit for the days you were without service. This does not apply to outages caused by customer equipment or planned network maintenance.\n\n**Customer Support Commitment:**\nOur goal is to resolve your issues on the first contact. We are committed to providing professional, empathetic, and effective support. If you are not satisfied with the support you received, you can ask to speak to a supervisor at any time.\n\n---\n\nThe light for an internet connection is on your modem and is usually labeled WAN, Internet, or with a globe icon, and you can tell the internet is on if the light (usually white or green) is solid.\n\nIf the light is red or not on at all, you have an internet signal problem as your modem isn’t successfully connecting to the internet. If this is you, skip ahead to our internet signal troubleshooting section.\n\nCheck the Wi-Fi light\n\nThe WiFi light(s) will be on your router or somewhere below the internet connection light if you have a modem/router combo unit. Labels for Wi-Fi lights vary but usually will read “2.4G” and “5G,” “WLAN,” or “Wireless.” These lights should be on and are usually blinking. If the Wi-Fi light(s) are off or red, your router isn’t broadcasting a signal. Skip to the Wi-Fi troubleshooting section to begin troubleshooting.\n\nIf the equipment lights aren’t revealing your internet issue, read on for the next steps.\n\nPro tip:"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      }
+    ],
+    "stats": {
+      "successes": 3,
+      "failures": 2,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 0,
+        "completion": 0,
+        "cached": 0,
+        "total": 0,
+        "numRequests": 5,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0
+        },
+        "assertions": {
+          "total": 3891,
+          "prompt": 3202,
+          "completion": 689,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0
+          }
+        }
+      }
+    }
+  },
+  "config": {
+    "tags": {},
+    "prompts": [
+      "prompts/rag_empathetic_prompt.txt"
+    ],
+    "providers": [
+      {
+        "config": {
+          "model": "Qwen/Qwen3-0.6B"
+        },
+        "id": "python:prompts/promptfoo_provider.py:call_agent"
+      }
+    ],
+    "tests": [
+      {
+        "vars": {
+          "complaint": "My internet has been down since yesterday. I work from home and this is very frustrating!",
+          "context": "If your internet comes back when you use a wired Ethernet connection, then you have a Wi-Fi problem; continue to our Wi-Fi troubleshooting section. If you still don’t have internet, the problem is likely bigger than your Wi-Fi, but it might still just be your device. Try accessing the web on a different device. If you still can’t get online, move on to our internet signal troubleshooting section to solve the problem.\n\nCheck for an internet outage\nIt could be that you’re not the only one whose internet is down. You can find information about internet outages on the website Down Detector, or you can contact your internet service provider (ISP) to investigate.\n\nThe site or service you’re trying to access could also be down. Try a few different websites. If they load properly, the original website you went to could be down for all visitors. (You can confirm this by typing in the URL at downforeveryoneorjustme.com.)\n\nPro tip:\n\n---\n\nIt’s incredibly frustrating when your internet isn’t working. Whether you’re hooked up to Wi-Fi but without internet access or you’re having trouble with a wired Ethernet connection, we’ll show you the quickest methods to identify the problem and get back online.\n\nWhen it comes to internet troubleshooting, you can either methodically work your way through the troubleshooting steps or just start trying fixes until something works. While methodical troubleshooting is better for getting to the bottom of an issue once and for all, sometimes you just need to get back online ASAP. We’ll start with our top five internet quick fixes and then walk you through a more thorough troubleshooting process if you’re still having issues.\n\nIn this guide:\n\nTop 5 quick fixes for internet issues | Is it your internet signal or your Wi-Fi? | Connected to Wi-Fi but no internet access | Wi-Fi troubleshooting | Advanced troubleshooting | Complete list of internet fixes\n\n---\n\n5. Check for an outage\nIf the problem is on your internet provider’s end, you can’t do anything to fix it. Make sure to check for outages before getting too deep into your troubleshooting efforts.\nSee instructions. \n\nInternet still down?\nIt’s time to dig a bit deeper with our troubleshooting guide.\n\nFirst, we’ll help you diagnose whether you have an internet signal issue or a problem with your Wi-Fi. Once you’ve discovered which type of problem you have, continue to either the internet signal troubleshooting section or the Wi-Fi troubleshooting section. If you’re still stumped, use our advanced troubleshooting section for particularly tricky circumstances.\n\nLastly, you can jump straight to our complete list of internet fixes and try each one until you’re back online.\n\nIf you’re experiencing repeated slowdowns and outages, you may have an internet plan that’s too slow. Take our “How much speed do I need?” test to see if you’re paying for enough internet bandwidth to deliver the goods."
+        },
+        "description": "Row #1"
+      },
+      {
+        "vars": {
+          "complaint": "I was overcharged on my last bill. Can you help?",
+          "context": "**Frequently Asked Questions about Billing**\n\n**Q: Why was I overcharged on my last bill?**\nA: An overcharge can happen for a few reasons. The most common are: promotional period ending, charges for one-time services like movie rentals, or changes in your service package. Please check the detailed breakdown on your statement. If you still believe there is an error, contact our support team with your account number.\n\n**Q: How can I change my payment method?**\nA: You can update your payment method at any time through our online customer portal. Log in to your account, navigate to the \"Billing\" section, and select \"Manage Payment Methods.\"\n\n**Q: What happens if I miss a payment?**\nA: A late fee may be applied to your account if a payment is not received by the due date. Continued failure to pay may result in a temporary suspension of your services. We recommend setting up AutoPay to avoid missed payments.\n\n---\n\n**Customer Service Policies and Guarantees**\n\n**Installation Appointments:**\nWe guarantee that a technician will arrive within the scheduled 4-hour appointment window. If our technician fails to arrive within the scheduled window, you are entitled to a one-time credit of $20 on your next bill. Please contact customer support to report a missed appointment.\n\n**Service Outage Guarantee:**\nWe strive for 99.9% network uptime. If you experience a continuous service outage for more than 24 hours, you may be eligible for a pro-rated credit for the days you were without service. This does not apply to outages caused by customer equipment or planned network maintenance.\n\n**Customer Support Commitment:**\nOur goal is to resolve your issues on the first contact. We are committed to providing professional, empathetic, and effective support. If you are not satisfied with the support you received, you can ask to speak to a supervisor at any time.\n\n---\n\nAlso, check for damage. See if the cable looks torn or perhaps chewed by a pet. Ethernet and phone cables are especially prone to damage, as the copper wires inside are very thin.\n\nPro tip:\n\nEthernet cables aren’t all the same, and it’s important to get the right type of Ethernet cable for the job. See our Ethernet cable article to make sure you have the right one.\n\nWhen should you contact your provider?\nIt’s a good idea to try some basic troubleshooting before contacting your provider. Restarting your modem and checking wires will likely be the first things tech support asks you to do anyway. But if you can’t solve the problem on your own, it’s time to contact your provider for a little help."
+        },
+        "description": "Row #2"
+      },
+      {
+        "vars": {
+          "complaint": "The internet speed is very slow during peak hours",
+          "context": "**2. Slow Internet Speeds**\n- **Run a Speed Test:** Use a reliable speed test website to check your current download and upload speeds. Compare this to the plan you are paying for.\n- **Move Closer to the Router:** If you are on Wi-Fi, your distance from the router can significantly impact speed. Try moving closer.\n- **Disconnect Unused Devices:** Too many devices connected to your Wi-Fi at once can slow down the network. Disconnect any that are not in use.\n- **Restart Your Router:** Just like with a lost connection, restarting your router can often resolve speed issues.\n\n---\n\nIs the problem with your internet signal or your Wi-Fi?\nInternet signal issues have different fixes than Wi-Fi issues—so, it’s important to find out which you’re dealing with. Examples of internet signal issues include problems with the signal coming from your ISP, modem issues, and issues with the wiring in and around your home. Wi-Fi issues are problems with your router’s wireless signal, such as interference from obstructions, too much distance between the router and devices, or interference from other networks and electronics.\n\nYou can tell an internet signal issue from a Wi-Fi issue with a few key troubleshooting steps.\n\n---\n\n5. Check for an outage\nIf the problem is on your internet provider’s end, you can’t do anything to fix it. Make sure to check for outages before getting too deep into your troubleshooting efforts.\nSee instructions. \n\nInternet still down?\nIt’s time to dig a bit deeper with our troubleshooting guide.\n\nFirst, we’ll help you diagnose whether you have an internet signal issue or a problem with your Wi-Fi. Once you’ve discovered which type of problem you have, continue to either the internet signal troubleshooting section or the Wi-Fi troubleshooting section. If you’re still stumped, use our advanced troubleshooting section for particularly tricky circumstances.\n\nLastly, you can jump straight to our complete list of internet fixes and try each one until you’re back online.\n\nIf you’re experiencing repeated slowdowns and outages, you may have an internet plan that’s too slow. Take our “How much speed do I need?” test to see if you’re paying for enough internet bandwidth to deliver the goods."
+        },
+        "description": "Row #3"
+      },
+      {
+        "vars": {
+          "complaint": "I can't access my email through your service",
+          "context": "Fix Wi-Fi connection issues in Windows\nApplies To\nIf you're unable to access email, browse the web, or stream music, it's likely you're not connected to your network and can't access the internet. Fortunately, most connectivity issues can be resolved with simple troubleshooting steps. In this guide, we'll explore a range of solutions to help you fix Wi-Fi problems in Windows, providing clear and detailed instructions for effective troubleshooting.\n\nWindows 11\nWindows 10\nRun the Network troubleshooter\nIf you are using a Windows 11 device, start by running the automated Network and Internet troubleshooter in the Get Help app. It will automatically run diagnostics and attempt to fix most of the problems. If you are using an older version of Windows or a mobile device, please skip to General troubleshooting steps.\n\nRun the troubleshooter in Get Help\n\nUnderstand Wi-Fi icons\nConnected to Wi-Fi icon that appears on the taskbar\n\nWi-Fi Connected\n\n---\n\nIf the device connects to Wi-Fi, but internet access is unavailable, follow the below troubleshooting steps.\n\nTurn off Wi-Fi and turn it on again and reconnect to your wireless network.\n\nRenew IP Configuration\n\nOpen Command Prompt as Administrator.\n\nType ipconfig /release and press Enter.\n\nType ipconfig /renew and press Enter.\n\nFlush DNS Cache\n\nOpen Command Prompt as Administrator.\n\nType ipconfig /flushdns and press Enter.\n\nCheck for Proxy Settings\n\nGo to Settings > Network & Internet > Proxy.\n\nTurn off any manual proxy settings.\n\nCheck your IP address\n\n---\n\nAlso, check for damage. See if the cable looks torn or perhaps chewed by a pet. Ethernet and phone cables are especially prone to damage, as the copper wires inside are very thin.\n\nPro tip:\n\nEthernet cables aren’t all the same, and it’s important to get the right type of Ethernet cable for the job. See our Ethernet cable article to make sure you have the right one.\n\nWhen should you contact your provider?\nIt’s a good idea to try some basic troubleshooting before contacting your provider. Restarting your modem and checking wires will likely be the first things tech support asks you to do anyway. But if you can’t solve the problem on your own, it’s time to contact your provider for a little help."
+        },
+        "description": "Row #4"
+      },
+      {
+        "vars": {
+          "complaint": "My service was supposed to be installed today but nobody showed up",
+          "context": "Type ipconfig /flushdns and press Enter.\n\nCheck for Proxy Settings\n\nGo to Settings > Network & Internet > Proxy.\n\nTurn off any manual proxy settings.\n\nCheck your IP address\n\nFind your IP address and make sure it's not something like this —169.254.x.x. If your IP address looks like this, it means that Windows couldn’t get an IP address from your router. If you’re not using static IP addresses on your network, then check to make sure DHCP is enabled on your router. Check the documentation for your router to find out how to do this. If this fixes your Wi-Fi problem, the No connection icon will change to Wi-Fi connected in a few seconds.\n\n​​​​​​​Check your DNS server. Verify that you have a DNS server listed and that you can ping it. ​​​​​​​To ping the DNS server:\n\nOpen Command Prompt as Administrator. Type ipconfig /all | findstr /c:\"DNS Servers\" and press Enter. Note the DNS Server IP address.\n\nAt the command prompt, type ping [DNS server address].\n\n---\n\n**Customer Service Policies and Guarantees**\n\n**Installation Appointments:**\nWe guarantee that a technician will arrive within the scheduled 4-hour appointment window. If our technician fails to arrive within the scheduled window, you are entitled to a one-time credit of $20 on your next bill. Please contact customer support to report a missed appointment.\n\n**Service Outage Guarantee:**\nWe strive for 99.9% network uptime. If you experience a continuous service outage for more than 24 hours, you may be eligible for a pro-rated credit for the days you were without service. This does not apply to outages caused by customer equipment or planned network maintenance.\n\n**Customer Support Commitment:**\nOur goal is to resolve your issues on the first contact. We are committed to providing professional, empathetic, and effective support. If you are not satisfied with the support you received, you can ask to speak to a supervisor at any time.\n\n---\n\nThe light for an internet connection is on your modem and is usually labeled WAN, Internet, or with a globe icon, and you can tell the internet is on if the light (usually white or green) is solid.\n\nIf the light is red or not on at all, you have an internet signal problem as your modem isn’t successfully connecting to the internet. If this is you, skip ahead to our internet signal troubleshooting section.\n\nCheck the Wi-Fi light\n\nThe WiFi light(s) will be on your router or somewhere below the internet connection light if you have a modem/router combo unit. Labels for Wi-Fi lights vary but usually will read “2.4G” and “5G,” “WLAN,” or “Wireless.” These lights should be on and are usually blinking. If the Wi-Fi light(s) are off or red, your router isn’t broadcasting a signal. Skip to the Wi-Fi troubleshooting section to begin troubleshooting.\n\nIf the equipment lights aren’t revealing your internet issue, read on for the next steps.\n\nPro tip:"
+        },
+        "description": "Row #5"
+      }
+    ],
+    "scenarios": [],
+    "env": {},
+    "sharing": true,
+    "defaultTest": {
+      "assert": [
+        {
+          "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+          "type": "llm-rubric",
+          "value": "Is the answer helpful and directly based on the internal knowledge, without mentioning that it has internal knowledge?"
+        },
+        {
+          "provider": "anthropic:messages:claude-3-5-sonnet-20241022",
+          "type": "llm-rubric",
+          "value": "Does the answer match the persona (empathetic, friendly, or structured) defined in the prompt?"
+        }
+      ],
+      "vars": {},
+      "options": {},
+      "metadata": {}
+    },
+    "outputPath": [
+      "results\\results_rag_empathetic_prompt_Qwen3-0.6B.json"
+    ],
+    "extensions": [],
+    "metadata": {}
+  },
+  "shareableUrl": null
+}

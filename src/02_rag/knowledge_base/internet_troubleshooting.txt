@@ -1,0 +1,12 @@
+**Troubleshooting Common Internet Issues**
+
+**1. No Internet Connection**
+- **Check the Modem/Router Lights:** Ensure the power, receive, send, and online lights are solid green. If any are blinking or off, unplug the device for 60 seconds and plug it back in.
+- **Restart Your Device:** Sometimes the issue is with your computer or phone. Try restarting it.
+- **Check Cables:** Make sure all cables are securely connected to your devices and wall outlets. An ethernet cable should click into place.
+
+**2. Slow Internet Speeds**
+- **Run a Speed Test:** Use a reliable speed test website to check your current download and upload speeds. Compare this to the plan you are paying for.
+- **Move Closer to the Router:** If you are on Wi-Fi, your distance from the router can significantly impact speed. Try moving closer.
+- **Disconnect Unused Devices:** Too many devices connected to your Wi-Fi at once can slow down the network. Disconnect any that are not in use.
+- **Restart Your Router:** Just like with a lost connection, restarting your router can often resolve speed issues.
