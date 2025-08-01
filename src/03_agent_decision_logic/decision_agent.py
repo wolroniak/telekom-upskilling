@@ -1,3 +1,4 @@
+
 import os
 import sys
 import importlib.util
@@ -17,18 +18,20 @@ rag_pipeline_module = import_from_path("rag_pipeline", "src/02_rag/rag_pipeline.
 RAGPipeline = rag_pipeline_module.RAGPipeline
 
 class DecisionAgent:
-    def __init__(self, threshold=0.6):
+    def __init__(self, llm_agent: LLMAgent, rag_pipeline: RAGPipeline, threshold: float = 0.6):
         """
         Initializes the DecisionAgent.
 
         Args:
+            llm_agent (LLMAgent): An instance of the LLM agent.
+            rag_pipeline (RAGPipeline): An instance of the RAG pipeline.
             threshold (float): The relevance score threshold. Documents with a score
                                below this value will be considered relevant.
                                FAISS L2 distance is used, so lower is better.
         """
         print("--- Initializing Decision Agent ---")
-        self.rag_pipeline = RAGPipeline()
-        self.llm_agent = LLMAgent()
+        self.rag_pipeline = rag_pipeline
+        self.llm_agent = llm_agent
         self.relevance_threshold = threshold
         # choose prompt which worked best from experiments
         self.rag_prompt_template = self._load_prompt_template("prompts/rag_empathetic_prompt.txt")
@@ -53,7 +56,7 @@ class DecisionAgent:
         if not retrieved_docs:
             print("Decision: No documents found in knowledge base. Using LLM-only path.")
             final_prompt = self._format_llm_only_prompt(query)
-            response = self.llm_agent(final_prompt)
+            response, _ = self.llm_agent(final_prompt)
             return response, "LLM_ONLY"
 
         best_score = min(retrieved_scores)
@@ -65,11 +68,11 @@ class DecisionAgent:
             print("Decision: Relevant context found. Using RAG path.")
             context_str = "\n\n---\n\n".join([doc.page_content for doc in retrieved_docs])
             final_prompt = self._format_rag_prompt(query, context_str)
-            response = self.llm_agent(final_prompt)
+            response, _ = self.llm_agent(final_prompt)
             return response, "RAG"
         else:
             # LLM-only Path
             print("Decision: Context not relevant enough. Using LLM-only path.")
             final_prompt = self._format_llm_only_prompt(query)
-            response = self.llm_agent(final_prompt)
+            response, _ = self.llm_agent(final_prompt)
             return response, "LLM_ONLY"

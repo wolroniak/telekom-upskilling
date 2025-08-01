@@ -31,7 +31,12 @@ def generate_response(model, tokenizer, system_prompt, user_prompt):
     
     # Decode the full output and then remove the prompt part
     full_response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    return full_response.split("<|im_end|>")[-1].strip()
+    # The response starts after the 'assistant' token.
+    parts = full_response.split('assistant')
+    clean_response = parts[-1].strip() if len(parts) > 1 else full_response
+    # Remove the empty think tags and any residual newlines
+    clean_response = clean_response.replace("<think>", "").replace("</think>", "").strip()
+    return clean_response
 
 def main(
     base_model_id="Qwen/Qwen3-0.6B",
@@ -77,4 +82,15 @@ def main(
         print("-"*80)
 
         # --- Base Model Response ---
-        print("Generating response from BASE mo
+        print("Generating response from BASE model...")
+        base_response = generate_response(base_model, base_tokenizer, system_prompt, user_prompt)
+        print(f"Response (Base): {base_response.strip()}")
+        
+        # --- Fine-Tuned Model Response ---
+        print("\nGenerating response from FINE-TUNED model...")
+        ft_response = generate_response(ft_model, base_tokenizer, system_prompt, user_prompt)
+        print(f"Response (Fine-Tuned): {ft_response.strip()}")
+        print("="*80 + "\n")
+
+if __name__ == "__main__":
+    main()
