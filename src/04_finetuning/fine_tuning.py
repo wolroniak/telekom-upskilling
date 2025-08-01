@@ -8,6 +8,7 @@ from trl import SFTTrainer
 
 def fine_tune_model(
     dataset_path="data/finetuning_dataset",
+    dataset=None,
     base_model_id="Qwen/Qwen3-0.6B",
     output_dir="models/Qwen3-0.6B-fine-tuned",
     lora_rank=64,
@@ -23,9 +24,10 @@ def fine_tune_model(
     Fine-tunes the Qwen3 model using the modern SFTTrainer API.
     """
     # --- Load the dataset ---
-    if not os.path.exists(dataset_path):
-        raise FileNotFoundError(f"Dataset not found at {dataset_path}. Please run the data_preparation.py script first.")
-    dataset = load_from_disk(dataset_path)
+    if dataset is None:
+        if not os.path.exists(dataset_path):
+            raise FileNotFoundError(f"Dataset not found at {dataset_path}. Please run the data_preparation.py script first.")
+        dataset = load_from_disk(dataset_path)
 
     # --- Load tokenizer and model ---
     tokenizer = AutoTokenizer.from_pretrained(base_model_id, use_fast=True)
